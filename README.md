@@ -10,8 +10,7 @@ A complete optimization pipeline for the Finite-Difference Time-Domain (FDTD) el
 
 ## Live Demos
 
-- **[Interactive FDTD Simulator](https://YOUR_USERNAME.github.io/fdtd-em-gpu/)** — run the simulation in your browser with adjustable parameters
-- **[Presentation Slides](https://YOUR_USERNAME.github.io/fdtd-em-gpu/fdtd_presentation.html)** — reveal.js slide deck
+- **[Interactive FDTD Simulator]([https://vrajb24.github.io/fdtd-gpu-optimization/])** — run the simulation in your browser with adjustable parameters
 
 > Replace `YOUR_USERNAME` with your GitHub username after enabling GitHub Pages (see [Setup](#hosting-the-demo) below).
 
