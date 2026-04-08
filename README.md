@@ -1,4 +1,4 @@
-# 2D FDTD Electromagnetic Solver — CPU to GPU Optimization
+# FDTD Electromagnetic Wave Simulator — GPU Accelerated
 
 A complete optimization pipeline for the Finite-Difference Time-Domain (FDTD) electromagnetic solver, progressing from naive Python loops to highly optimized GPU kernels. **9 implementations** benchmarked on Tesla P100 and Tesla T4.
 
@@ -10,8 +10,8 @@ A complete optimization pipeline for the Finite-Difference Time-Domain (FDTD) el
 
 ## Live Demos
 
-- **[Interactive FDTD Simulator](https://YOUR_USERNAME.github.io/fdtd-gpu-optimization/)** — run the simulation in your browser with adjustable parameters
-- **[Presentation Slides](https://YOUR_USERNAME.github.io/fdtd-gpu-optimization/fdtd_presentation.html)** — reveal.js slide deck
+- **[Interactive FDTD Simulator](https://YOUR_USERNAME.github.io/fdtd-em-gpu/)** — run the simulation in your browser with adjustable parameters
+- **[Presentation Slides](https://YOUR_USERNAME.github.io/fdtd-em-gpu/fdtd_presentation.html)** — reveal.js slide deck
 
 > Replace `YOUR_USERNAME` with your GitHub username after enabling GitHub Pages (see [Setup](#hosting-the-demo) below).
 
@@ -65,7 +65,7 @@ The solver implements 2D TM-mode FDTD with:
 ## Project Structure
 
 ```
-fdtd-gpu-optimization/
+fdtd-em-gpu/
 ├── notebooks/                        # Clean notebooks (run on Colab/Kaggle)
 │   ├── 01_all_versions.ipynb         # All 9 versions: Loops → NumPy → Warp → CuPy → CUDA C
 │   ├── 02_cupy_deep_dive.ipynb       # CuPy end-to-end with operation annotations
@@ -91,12 +91,11 @@ fdtd-gpu-optimization/
 ├── video_generator/
 │   └── fdtd_video_generator.py      # MP4 generator with GUI obstacle drawing
 │
-├── demo/                            # Web demos (GitHub Pages)
+├── docs/                            # GitHub Pages serves from here
 │   ├── index.html                   # Interactive FDTD simulator
 │   └── fdtd_presentation.html       # Reveal.js presentation
 │
-├── docs/
-│   ├── cupy_operations_breakdown.md  # CuPy operation-level analysis
+├── reports/
 │   ├── fdtd_report.pdf              # Project report
 │   └── gpu_optimization_report.tex
 │
@@ -157,10 +156,10 @@ To host the interactive simulator and presentation via GitHub Pages:
 
 1. Push this repo to GitHub
 2. Go to **Settings → Pages**
-3. Set source to **Deploy from a branch**, branch `main`, folder `/demo`
+3. Set source to **Deploy from a branch**, branch `main`, folder `/docs`
 4. Your demos will be live at:
-   - `https://YOUR_USERNAME.github.io/fdtd-gpu-optimization/` (interactive simulator)
-   - `https://YOUR_USERNAME.github.io/fdtd-gpu-optimization/fdtd_presentation.html` (slides)
+   - `https://YOUR_USERNAME.github.io/fdtd-em-gpu/` (interactive simulator)
+   - `https://YOUR_USERNAME.github.io/fdtd-em-gpu/fdtd_presentation.html` (slides)
 
 ---
 
