@@ -150,19 +150,6 @@ Working set (480 KB) fits entirely in L2 cache (4 MB). Shared memory provides no
 
 ---
 
-## Hosting the Demo
-
-To host the interactive simulator and presentation via GitHub Pages:
-
-1. Push this repo to GitHub
-2. Go to **Settings → Pages**
-3. Set source to **Deploy from a branch**, branch `main`, folder `/docs`
-4. Your demos will be live at:
-   - `https://YOUR_USERNAME.github.io/fdtd-em-gpu/` (interactive simulator)
-   - `https://YOUR_USERNAME.github.io/fdtd-em-gpu/fdtd_presentation.html` (slides)
-
----
-
 ## Course
 
 **IDC 606 — Fast Computational Hydrodynamics**  
