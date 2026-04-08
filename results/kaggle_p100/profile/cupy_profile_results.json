@@ -1,0 +1,4083 @@
+{
+  "gpu": "Tesla P100-PCIE-16GB",
+  "grid": "200x200",
+  "steps": 400,
+  "flops_per_step": 516007,
+  "flops_total": 206402800,
+  "setup": {
+    "kernel_definition_ms": 0.2569250000306056,
+    "gpu_alloc_ms": 1.101878000099532,
+    "pulse_cpu_compute_ms": 1.3945989999228914,
+    "pulse_h2d_upload_ms": 0.9580769997228344,
+    "scalar_cast_ms": 0.483758999962447,
+    "first_launch_H_ms": 54.56813000000693,
+    "first_launch_Ez_ms": 53.53906000027564,
+    "first_launch_energy_ms": 43.329586000254494,
+    "total_loop_ms": 95.9356809999008,
+    "total_setup_ms": 155.63201400027538
+  },
+  "per_step": [
+    {
+      "step": 0,
+      "H_kernel_ms": 0.23655700033486937,
+      "Ez_kernel_ms": 0.08461300012641004,
+      "energy_memset_ms": 0.46889899977031746,
+      "energy_kernel_ms": 0.555990000066231,
+      "energy_d2h_ms": 0.1903699999274977,
+      "snapshot_d2h_ms": 0.1824539999688568,
+      "is_snapshot": true,
+      "total_step_ms": 1.7188830001941824
+    },
+    {
+      "step": 1,
+      "H_kernel_ms": 0.05004700005883933,
+      "Ez_kernel_ms": 0.029490000088117085,
+      "energy_memset_ms": 0.06191500006025308,
+      "energy_kernel_ms": 0.13790499997412553,
+      "energy_d2h_ms": 0.08773699983066763,
+      "is_snapshot": false,
+      "total_step_ms": 0.36709400001200265
+    },
+    {
+      "step": 2,
+      "H_kernel_ms": 0.037384999814094044,
+      "Ez_kernel_ms": 0.04260300011083018,
+      "energy_memset_ms": 0.032001999898056965,
+      "energy_kernel_ms": 0.12665200029005064,
+      "energy_d2h_ms": 0.6220010000106413,
+      "is_snapshot": false,
+      "total_step_ms": 0.8606430001236731
+    },
+    {
+      "step": 3,
+      "H_kernel_ms": 0.1654180000514316,
+      "Ez_kernel_ms": 0.05243200030236039,
+      "energy_memset_ms": 0.042269000005035195,
+      "energy_kernel_ms": 0.13364000005822163,
+      "energy_d2h_ms": 0.06415099960577209,
+      "is_snapshot": false,
+      "total_step_ms": 0.4579100000228209
+    },
+    {
+      "step": 4,
+      "H_kernel_ms": 0.039057999856595416,
+      "Ez_kernel_ms": 0.03780699989874847,
+      "energy_memset_ms": 0.04122700011066627,
+      "energy_kernel_ms": 0.13165399968784186,
+      "energy_d2h_ms": 0.05716499981645029,
+      "is_snapshot": false,
+      "total_step_ms": 0.3069109993703023
+    },
+    {
+      "step": 5,
+      "H_kernel_ms": 0.0355150000359572,
+      "Ez_kernel_ms": 0.05051800008004648,
+      "energy_memset_ms": 0.03904000004695263,
+      "energy_kernel_ms": 0.13023099972997443,
+      "energy_d2h_ms": 0.04531600006885128,
+      "is_snapshot": false,
+      "total_step_ms": 0.300619999961782
+    },
+    {
+      "step": 6,
+      "H_kernel_ms": 0.023797000267222757,
+      "Ez_kernel_ms": 0.023396999949909514,
+      "energy_memset_ms": 0.02461400026732008,
+      "energy_kernel_ms": 0.11941999991904595,
+      "energy_d2h_ms": 0.028497000130300876,
+      "is_snapshot": false,
+      "total_step_ms": 0.21972500053379918
+    },
+    {
+      "step": 7,
+      "H_kernel_ms": 0.019826999960059766,
+      "Ez_kernel_ms": 0.020739999854413327,
+      "energy_memset_ms": 0.01810000003388268,
+      "energy_kernel_ms": 0.11798200011980953,
+      "energy_d2h_ms": 0.022354000066115987,
+      "is_snapshot": false,
+      "total_step_ms": 0.19900300003428129
+    },
+    {
+      "step": 8,
+      "H_kernel_ms": 0.018726999769569375,
+      "Ez_kernel_ms": 0.019978999716840917,
+      "energy_memset_ms": 0.01591399995959364,
+      "energy_kernel_ms": 0.11812000002464629,
+      "energy_d2h_ms": 0.020815999960177578,
+      "is_snapshot": false,
+      "total_step_ms": 0.1935559994308278
+    },
+    {
+      "step": 9,
+      "H_kernel_ms": 0.01848500005507958,
+      "Ez_kernel_ms": 0.02075099973808392,
+      "energy_memset_ms": 0.015813000118214404,
+      "energy_kernel_ms": 0.12046900019413442,
+      "energy_d2h_ms": 0.03671100012070383,
+      "is_snapshot": false,
+      "total_step_ms": 0.21222900022621616
+    },
+    {
+      "step": 10,
+      "H_kernel_ms": 0.024260999907710357,
+      "Ez_kernel_ms": 0.02112499987561023,
+      "energy_memset_ms": 0.02309100000275066,
+      "energy_kernel_ms": 0.11841400009870995,
+      "energy_d2h_ms": 0.025532000108796638,
+      "is_snapshot": false,
+      "total_step_ms": 0.21242299999357783
+    },
+    {
+      "step": 11,
+      "H_kernel_ms": 0.01901500036183279,
+      "Ez_kernel_ms": 0.02034899989666883,
+      "energy_memset_ms": 0.01684300013948814,
+      "energy_kernel_ms": 0.11854700005642371,
+      "energy_d2h_ms": 0.024120000034599798,
+      "is_snapshot": false,
+      "total_step_ms": 0.19887400048901327
+    },
+    {
+      "step": 12,
+      "H_kernel_ms": 0.019737999991775723,
+      "Ez_kernel_ms": 0.020318999759183498,
+      "energy_memset_ms": 0.016754999705881346,
+      "energy_kernel_ms": 0.11863400004585856,
+      "energy_d2h_ms": 0.022034000267012743,
+      "is_snapshot": false,
+      "total_step_ms": 0.19747999976971187
+    },
+    {
+      "step": 13,
+      "H_kernel_ms": 0.018996000108018052,
+      "Ez_kernel_ms": 0.019940000129281543,
+      "energy_memset_ms": 0.015574999906675657,
+      "energy_kernel_ms": 0.11814400022558402,
+      "energy_d2h_ms": 0.02158999996026978,
+      "is_snapshot": false,
+      "total_step_ms": 0.19424500032982905
+    },
+    {
+      "step": 14,
+      "H_kernel_ms": 0.1145319997704064,
+      "Ez_kernel_ms": 0.06031599968991941,
+      "energy_memset_ms": 0.060228000165807316,
+      "energy_kernel_ms": 0.1322309999522986,
+      "energy_d2h_ms": 0.05437500021798769,
+      "is_snapshot": false,
+      "total_step_ms": 0.4216819997964194
+    },
+    {
+      "step": 15,
+      "H_kernel_ms": 0.03811599981418112,
+      "Ez_kernel_ms": 0.023348000013356796,
+      "energy_memset_ms": 0.025158999960694928,
+      "energy_kernel_ms": 0.12165599991931231,
+      "energy_d2h_ms": 0.03058199990846333,
+      "is_snapshot": false,
+      "total_step_ms": 0.23886099961600848
+    },
+    {
+      "step": 16,
+      "H_kernel_ms": 0.019644000076368684,
+      "Ez_kernel_ms": 0.020693999886134407,
+      "energy_memset_ms": 0.01821000023483066,
+      "energy_kernel_ms": 0.11823900013041566,
+      "energy_d2h_ms": 0.023133000013331184,
+      "is_snapshot": false,
+      "total_step_ms": 0.1999200003410806
+    },
+    {
+      "step": 17,
+      "H_kernel_ms": 0.0190750001820561,
+      "Ez_kernel_ms": 0.019994000012957258,
+      "energy_memset_ms": 0.015730999621155206,
+      "energy_kernel_ms": 0.12055500019414467,
+      "energy_d2h_ms": 0.033851000353024574,
+      "is_snapshot": false,
+      "total_step_ms": 0.2092060003633378
+    },
+    {
+      "step": 18,
+      "H_kernel_ms": 0.02391399993939558,
+      "Ez_kernel_ms": 0.021179000214033294,
+      "energy_memset_ms": 0.022374999844032573,
+      "energy_kernel_ms": 0.11873999983436079,
+      "energy_d2h_ms": 0.024324000150954816,
+      "is_snapshot": false,
+      "total_step_ms": 0.21053199998277705
+    },
+    {
+      "step": 19,
+      "H_kernel_ms": 0.019097000404144637,
+      "Ez_kernel_ms": 0.02048899978035479,
+      "energy_memset_ms": 0.017735000255925115,
+      "energy_kernel_ms": 0.14038900008017663,
+      "energy_d2h_ms": 0.06895399974382599,
+      "is_snapshot": false,
+      "total_step_ms": 0.26666400026442716
+    },
+    {
+      "step": 20,
+      "H_kernel_ms": 0.043975000153295696,
+      "Ez_kernel_ms": 0.026199999865639256,
+      "energy_memset_ms": 0.03713300020535826,
+      "energy_kernel_ms": 0.11885999992955476,
+      "energy_d2h_ms": 0.03199499997208477,
+      "is_snapshot": false,
+      "total_step_ms": 0.25816300012593274
+    },
+    {
+      "step": 21,
+      "H_kernel_ms": 0.01974299993889872,
+      "Ez_kernel_ms": 0.020230999780324055,
+      "energy_memset_ms": 0.01767999992807745,
+      "energy_kernel_ms": 0.12015899983452982,
+      "energy_d2h_ms": 0.07027099991319119,
+      "is_snapshot": false,
+      "total_step_ms": 0.24808399939502124
+    },
+    {
+      "step": 22,
+      "H_kernel_ms": 0.039897000078781275,
+      "Ez_kernel_ms": 0.06863999988127034,
+      "energy_memset_ms": 0.029504999929486075,
+      "energy_kernel_ms": 0.1305649998357694,
+      "energy_d2h_ms": 0.04015600006823661,
+      "is_snapshot": false,
+      "total_step_ms": 0.3087629997935437
+    },
+    {
+      "step": 23,
+      "H_kernel_ms": 0.022553999770025257,
+      "Ez_kernel_ms": 0.023359999886451988,
+      "energy_memset_ms": 0.022062999960326124,
+      "energy_kernel_ms": 0.1196560001517355,
+      "energy_d2h_ms": 0.02862900009859004,
+      "is_snapshot": false,
+      "total_step_ms": 0.2162619998671289
+    },
+    {
+      "step": 24,
+      "H_kernel_ms": 0.021694000224670162,
+      "Ez_kernel_ms": 0.022261000140133547,
+      "energy_memset_ms": 0.01941900018209708,
+      "energy_kernel_ms": 0.11920199995074654,
+      "energy_d2h_ms": 0.024883000151021406,
+      "is_snapshot": false,
+      "total_step_ms": 0.20745900064866873
+    },
+    {
+      "step": 25,
+      "H_kernel_ms": 0.025903999812726397,
+      "Ez_kernel_ms": 0.07293600037883152,
+      "energy_memset_ms": 0.025164999897242524,
+      "energy_kernel_ms": 0.12357000014162622,
+      "energy_d2h_ms": 0.03348500013089506,
+      "is_snapshot": false,
+      "total_step_ms": 0.2810600003613217
+    },
+    {
+      "step": 26,
+      "H_kernel_ms": 0.020822999886149773,
+      "Ez_kernel_ms": 0.021770000330434414,
+      "energy_memset_ms": 0.01843699965320411,
+      "energy_kernel_ms": 0.11931200015169452,
+      "energy_d2h_ms": 0.032877999728953,
+      "is_snapshot": false,
+      "total_step_ms": 0.21321999975043582
+    },
+    {
+      "step": 27,
+      "H_kernel_ms": 0.020712999685201794,
+      "Ez_kernel_ms": 0.020477000362006947,
+      "energy_memset_ms": 0.01672100006544497,
+      "energy_kernel_ms": 0.11823700015156646,
+      "energy_d2h_ms": 0.022299000193015672,
+      "is_snapshot": false,
+      "total_step_ms": 0.19844700045723584
+    },
+    {
+      "step": 28,
+      "H_kernel_ms": 0.018911999632109655,
+      "Ez_kernel_ms": 0.019737000002351124,
+      "energy_memset_ms": 0.01594300010765437,
+      "energy_kernel_ms": 0.11822600026789587,
+      "energy_d2h_ms": 0.02193099999203696,
+      "is_snapshot": false,
+      "total_step_ms": 0.19474900000204798
+    },
+    {
+      "step": 29,
+      "H_kernel_ms": 0.01912099969558767,
+      "Ez_kernel_ms": 0.019611999960034154,
+      "energy_memset_ms": 0.016420000065409113,
+      "energy_kernel_ms": 0.11960500023633358,
+      "energy_d2h_ms": 0.03190500001437613,
+      "is_snapshot": false,
+      "total_step_ms": 0.20666299997174065
+    },
+    {
+      "step": 30,
+      "H_kernel_ms": 0.026142000024265144,
+      "Ez_kernel_ms": 0.02139999969585915,
+      "energy_memset_ms": 0.021212999854469672,
+      "energy_kernel_ms": 0.12034300016239285,
+      "energy_d2h_ms": 0.024368999675061787,
+      "is_snapshot": false,
+      "total_step_ms": 0.2134669994120486
+    },
+    {
+      "step": 31,
+      "H_kernel_ms": 0.019041000086872373,
+      "Ez_kernel_ms": 0.019967000298493076,
+      "energy_memset_ms": 0.017175999801111175,
+      "energy_kernel_ms": 0.1187929997286119,
+      "energy_d2h_ms": 0.02334000009796,
+      "is_snapshot": false,
+      "total_step_ms": 0.19831700001304853
+    },
+    {
+      "step": 32,
+      "H_kernel_ms": 0.019625000277301297,
+      "Ez_kernel_ms": 0.02082900027744472,
+      "energy_memset_ms": 0.016230000255745836,
+      "energy_kernel_ms": 0.11782899991885643,
+      "energy_d2h_ms": 0.021848999949725112,
+      "is_snapshot": false,
+      "total_step_ms": 0.1963620006790734
+    },
+    {
+      "step": 33,
+      "H_kernel_ms": 0.018989000182045856,
+      "Ez_kernel_ms": 0.019503000203258125,
+      "energy_memset_ms": 0.015437999991263496,
+      "energy_kernel_ms": 0.11859799997182563,
+      "energy_d2h_ms": 0.020806000065931585,
+      "is_snapshot": false,
+      "total_step_ms": 0.1933340004143247
+    },
+    {
+      "step": 34,
+      "H_kernel_ms": 0.019129000065731816,
+      "Ez_kernel_ms": 0.05855799963683239,
+      "energy_memset_ms": 0.06525700018755742,
+      "energy_kernel_ms": 0.13541099997382844,
+      "energy_d2h_ms": 0.03874399999403977,
+      "is_snapshot": false,
+      "total_step_ms": 0.31709899985798984
+    },
+    {
+      "step": 35,
+      "H_kernel_ms": 0.022168999748828355,
+      "Ez_kernel_ms": 0.035693999961949885,
+      "energy_memset_ms": 0.022803999854659196,
+      "energy_kernel_ms": 0.1530160002403136,
+      "energy_d2h_ms": 0.043943000036961166,
+      "is_snapshot": false,
+      "total_step_ms": 0.2776259998427122
+    },
+    {
+      "step": 36,
+      "H_kernel_ms": 0.02579000010882737,
+      "Ez_kernel_ms": 0.02304600002389634,
+      "energy_memset_ms": 0.02425399998173816,
+      "energy_kernel_ms": 0.11831999972855556,
+      "energy_d2h_ms": 0.07523500016759499,
+      "is_snapshot": false,
+      "total_step_ms": 0.2666450000106124
+    },
+    {
+      "step": 37,
+      "H_kernel_ms": 0.03542200010997476,
+      "Ez_kernel_ms": 0.022946000171941705,
+      "energy_memset_ms": 0.03894200017384719,
+      "energy_kernel_ms": 0.12029099980281899,
+      "energy_d2h_ms": 0.0317099998028425,
+      "is_snapshot": false,
+      "total_step_ms": 0.24931100006142515
+    },
+    {
+      "step": 38,
+      "H_kernel_ms": 0.021781000214105006,
+      "Ez_kernel_ms": 0.021530000140046468,
+      "energy_memset_ms": 0.019396000425331295,
+      "energy_kernel_ms": 0.1251639996553422,
+      "energy_d2h_ms": 0.051650999921548646,
+      "is_snapshot": false,
+      "total_step_ms": 0.2395220003563736
+    },
+    {
+      "step": 39,
+      "H_kernel_ms": 0.024158000087481923,
+      "Ez_kernel_ms": 0.022126999738247832,
+      "energy_memset_ms": 0.02162000009775511,
+      "energy_kernel_ms": 0.1189519998661126,
+      "energy_d2h_ms": 0.026945000172418077,
+      "is_snapshot": false,
+      "total_step_ms": 0.21380199996201554
+    },
+    {
+      "step": 40,
+      "H_kernel_ms": 0.03753400005734875,
+      "Ez_kernel_ms": 0.03429600019444479,
+      "energy_memset_ms": 0.055527999847981846,
+      "energy_kernel_ms": 0.13301199987836299,
+      "energy_d2h_ms": 0.03692799964483129,
+      "snapshot_d2h_ms": 0.18117999979949673,
+      "is_snapshot": true,
+      "total_step_ms": 0.4784779994224664
+    },
+    {
+      "step": 41,
+      "H_kernel_ms": 0.031582999781676335,
+      "Ez_kernel_ms": 0.024042999939410947,
+      "energy_memset_ms": 0.026037000225187512,
+      "energy_kernel_ms": 0.11789200016210089,
+      "energy_d2h_ms": 0.030825000067125075,
+      "is_snapshot": false,
+      "total_step_ms": 0.23038000017550075
+    },
+    {
+      "step": 42,
+      "H_kernel_ms": 0.01916800010803854,
+      "Ez_kernel_ms": 0.022012000044924207,
+      "energy_memset_ms": 0.018665999959921464,
+      "energy_kernel_ms": 0.14983500022935914,
+      "energy_d2h_ms": 0.05285599991111667,
+      "is_snapshot": false,
+      "total_step_ms": 0.26253700025336
+    },
+    {
+      "step": 43,
+      "H_kernel_ms": 0.05139799986864091,
+      "Ez_kernel_ms": 0.04271100033292896,
+      "energy_memset_ms": 0.02689099983399501,
+      "energy_kernel_ms": 0.11955299987675971,
+      "energy_d2h_ms": 0.03156599996145815,
+      "is_snapshot": false,
+      "total_step_ms": 0.27211899987378274
+    },
+    {
+      "step": 44,
+      "H_kernel_ms": 0.025522000214550644,
+      "Ez_kernel_ms": 0.02188199960073689,
+      "energy_memset_ms": 0.022045000150683336,
+      "energy_kernel_ms": 0.11860499989779782,
+      "energy_d2h_ms": 0.031084000056580408,
+      "is_snapshot": false,
+      "total_step_ms": 0.2191379999203491
+    },
+    {
+      "step": 45,
+      "H_kernel_ms": 0.01907499972730875,
+      "Ez_kernel_ms": 0.06094799982747645,
+      "energy_memset_ms": 0.03351199984535924,
+      "energy_kernel_ms": 0.13575299999502022,
+      "energy_d2h_ms": 0.0374569999621599,
+      "is_snapshot": false,
+      "total_step_ms": 0.28674499935732456
+    },
+    {
+      "step": 46,
+      "H_kernel_ms": 0.02143399979104288,
+      "Ez_kernel_ms": 0.022075999822845915,
+      "energy_memset_ms": 0.02029999996011611,
+      "energy_kernel_ms": 0.11852599982375978,
+      "energy_d2h_ms": 0.024127999949996592,
+      "is_snapshot": false,
+      "total_step_ms": 0.20646399934776127
+    },
+    {
+      "step": 47,
+      "H_kernel_ms": 0.01924700018207659,
+      "Ez_kernel_ms": 0.019962999886047328,
+      "energy_memset_ms": 0.02185199991799891,
+      "energy_kernel_ms": 0.15418400016642408,
+      "energy_d2h_ms": 0.05547500040847808,
+      "is_snapshot": false,
+      "total_step_ms": 0.270721000561025
+    },
+    {
+      "step": 48,
+      "H_kernel_ms": 0.0262849998762249,
+      "Ez_kernel_ms": 0.022154999896883965,
+      "energy_memset_ms": 0.025455000013607787,
+      "energy_kernel_ms": 0.11974999961239519,
+      "energy_d2h_ms": 0.09326500003226101,
+      "is_snapshot": false,
+      "total_step_ms": 0.28690999943137285
+    },
+    {
+      "step": 49,
+      "H_kernel_ms": 0.03887799994117813,
+      "Ez_kernel_ms": 0.024553999992349418,
+      "energy_memset_ms": 0.02480100010870956,
+      "energy_kernel_ms": 0.11792900022555841,
+      "energy_d2h_ms": 0.030967999919084832,
+      "is_snapshot": false,
+      "total_step_ms": 0.23713000018688035
+    },
+    {
+      "step": 50,
+      "H_kernel_ms": 0.01920300019264687,
+      "Ez_kernel_ms": 0.020246000076440396,
+      "energy_memset_ms": 0.0173720000020694,
+      "energy_kernel_ms": 0.11729600009857677,
+      "energy_d2h_ms": 0.022945000182517106,
+      "is_snapshot": false,
+      "total_step_ms": 0.19706200055225054
+    },
+    {
+      "step": 51,
+      "H_kernel_ms": 0.018700000055105193,
+      "Ez_kernel_ms": 0.019685000097524608,
+      "energy_memset_ms": 0.015374000213341787,
+      "energy_kernel_ms": 0.13469299983626115,
+      "energy_d2h_ms": 0.038359999962267466,
+      "is_snapshot": false,
+      "total_step_ms": 0.2268120001645002
+    },
+    {
+      "step": 52,
+      "H_kernel_ms": 0.03710100008902373,
+      "Ez_kernel_ms": 0.17212699958690791,
+      "energy_memset_ms": 0.038313000004563946,
+      "energy_kernel_ms": 0.12538999999378575,
+      "energy_d2h_ms": 0.0703299997439899,
+      "is_snapshot": false,
+      "total_step_ms": 0.44326099941827124
+    },
+    {
+      "step": 53,
+      "H_kernel_ms": 0.04274399998394074,
+      "Ez_kernel_ms": 0.04796399980477872,
+      "energy_memset_ms": 0.028793000183213735,
+      "energy_kernel_ms": 0.12109299996154732,
+      "energy_d2h_ms": 0.040099000216287095,
+      "is_snapshot": false,
+      "total_step_ms": 0.2806930001497676
+    },
+    {
+      "step": 54,
+      "H_kernel_ms": 0.02036499972746242,
+      "Ez_kernel_ms": 0.09159299997918424,
+      "energy_memset_ms": 0.025609999738662736,
+      "energy_kernel_ms": 0.12336000008872361,
+      "energy_d2h_ms": 0.10401899999123998,
+      "is_snapshot": false,
+      "total_step_ms": 0.364946999525273
+    },
+    {
+      "step": 55,
+      "H_kernel_ms": 0.030324999897857197,
+      "Ez_kernel_ms": 0.02394400007688091,
+      "energy_memset_ms": 0.026576999971439363,
+      "energy_kernel_ms": 0.11931500011996832,
+      "energy_d2h_ms": 0.03207100007784902,
+      "is_snapshot": false,
+      "total_step_ms": 0.2322320001439948
+    },
+    {
+      "step": 56,
+      "H_kernel_ms": 0.01987999985431088,
+      "Ez_kernel_ms": 0.021534000097744865,
+      "energy_memset_ms": 0.04558099999485421,
+      "energy_kernel_ms": 0.16537200008315267,
+      "energy_d2h_ms": 0.03819799985649297,
+      "is_snapshot": false,
+      "total_step_ms": 0.2905649998865556
+    },
+    {
+      "step": 57,
+      "H_kernel_ms": 0.023256000076798955,
+      "Ez_kernel_ms": 0.041758999941521324,
+      "energy_memset_ms": 0.055173999953694874,
+      "energy_kernel_ms": 0.13950299990028725,
+      "energy_d2h_ms": 0.048039999910542974,
+      "is_snapshot": false,
+      "total_step_ms": 0.3077319997828454
+    },
+    {
+      "step": 58,
+      "H_kernel_ms": 0.04064699987793574,
+      "Ez_kernel_ms": 0.19046699981117854,
+      "energy_memset_ms": 0.03856100011034869,
+      "energy_kernel_ms": 0.13630200010084081,
+      "energy_d2h_ms": 0.041807000343396794,
+      "is_snapshot": false,
+      "total_step_ms": 0.4477840002437006
+    },
+    {
+      "step": 59,
+      "H_kernel_ms": 0.021445000129460823,
+      "Ez_kernel_ms": 0.022483000066131353,
+      "energy_memset_ms": 0.020896000023640227,
+      "energy_kernel_ms": 0.11979900000369526,
+      "energy_d2h_ms": 0.02850500004569767,
+      "is_snapshot": false,
+      "total_step_ms": 0.21312800026862533
+    },
+    {
+      "step": 60,
+      "H_kernel_ms": 0.08162799986166647,
+      "Ez_kernel_ms": 0.0296990001515951,
+      "energy_memset_ms": 0.0244300003942044,
+      "energy_kernel_ms": 0.12133800009905826,
+      "energy_d2h_ms": 0.037988999793014955,
+      "is_snapshot": false,
+      "total_step_ms": 0.2950840002995392
+    },
+    {
+      "step": 61,
+      "H_kernel_ms": 0.02039299988609855,
+      "Ez_kernel_ms": 0.020737999875564128,
+      "energy_memset_ms": 0.01860900010797195,
+      "energy_kernel_ms": 0.11890999985553208,
+      "energy_d2h_ms": 0.07075499979691813,
+      "is_snapshot": false,
+      "total_step_ms": 0.24940499952208484
+    },
+    {
+      "step": 62,
+      "H_kernel_ms": 0.038253999719017884,
+      "Ez_kernel_ms": 0.027747999865823658,
+      "energy_memset_ms": 0.025597999865567544,
+      "energy_kernel_ms": 0.12216799996167538,
+      "energy_d2h_ms": 0.05059000022811233,
+      "is_snapshot": false,
+      "total_step_ms": 0.2643579996401968
+    },
+    {
+      "step": 63,
+      "H_kernel_ms": 0.09526700023343437,
+      "Ez_kernel_ms": 0.03641800003606477,
+      "energy_memset_ms": 0.03349500002514105,
+      "energy_kernel_ms": 0.1558619997013011,
+      "energy_d2h_ms": 0.049124999804917024,
+      "is_snapshot": false,
+      "total_step_ms": 0.3701669998008583
+    },
+    {
+      "step": 64,
+      "H_kernel_ms": 0.02487799974915106,
+      "Ez_kernel_ms": 0.022931000330572715,
+      "energy_memset_ms": 0.024292000034620287,
+      "energy_kernel_ms": 0.11855000002469751,
+      "energy_d2h_ms": 0.03315799995107227,
+      "is_snapshot": false,
+      "total_step_ms": 0.22380900009011384
+    },
+    {
+      "step": 65,
+      "H_kernel_ms": 0.019798000266746385,
+      "Ez_kernel_ms": 0.021794999611302046,
+      "energy_memset_ms": 0.0183769998329808,
+      "energy_kernel_ms": 0.15798999993421603,
+      "energy_d2h_ms": 0.053715000376541866,
+      "is_snapshot": false,
+      "total_step_ms": 0.2716750000217871
+    },
+    {
+      "step": 66,
+      "H_kernel_ms": 0.042283999846404186,
+      "Ez_kernel_ms": 0.04818500019609928,
+      "energy_memset_ms": 0.03657999968709191,
+      "energy_kernel_ms": 0.14031199998498778,
+      "energy_d2h_ms": 0.04375099979370134,
+      "is_snapshot": false,
+      "total_step_ms": 0.3111119995082845
+    },
+    {
+      "step": 67,
+      "H_kernel_ms": 0.028911999834235758,
+      "Ez_kernel_ms": 0.025411000024178065,
+      "energy_memset_ms": 0.024646999918331858,
+      "energy_kernel_ms": 0.12651299994104193,
+      "energy_d2h_ms": 0.028768999982276,
+      "is_snapshot": false,
+      "total_step_ms": 0.2342519997000636
+    },
+    {
+      "step": 68,
+      "H_kernel_ms": 0.02020600004470907,
+      "Ez_kernel_ms": 0.020932000097673154,
+      "energy_memset_ms": 0.018404999991616933,
+      "energy_kernel_ms": 0.12067199986631749,
+      "energy_d2h_ms": 0.07733500024187379,
+      "is_snapshot": false,
+      "total_step_ms": 0.25755000024219044
+    },
+    {
+      "step": 69,
+      "H_kernel_ms": 0.036018000173498876,
+      "Ez_kernel_ms": 0.023893000161478994,
+      "energy_memset_ms": 0.02351000011913129,
+      "energy_kernel_ms": 0.11882599983437103,
+      "energy_d2h_ms": 0.03007400027854601,
+      "is_snapshot": false,
+      "total_step_ms": 0.2323210005670262
+    },
+    {
+      "step": 70,
+      "H_kernel_ms": 0.019164000150340144,
+      "Ez_kernel_ms": 0.019869999960064888,
+      "energy_memset_ms": 0.025349000225105556,
+      "energy_kernel_ms": 0.1738710002427979,
+      "energy_d2h_ms": 0.04969000019627856,
+      "is_snapshot": false,
+      "total_step_ms": 0.28794400077458704
+    },
+    {
+      "step": 71,
+      "H_kernel_ms": 0.04909900007987744,
+      "Ez_kernel_ms": 0.02586800019344082,
+      "energy_memset_ms": 0.02392999977018917,
+      "energy_kernel_ms": 0.11917700021513156,
+      "energy_d2h_ms": 0.029690000246773707,
+      "is_snapshot": false,
+      "total_step_ms": 0.2477640005054127
+    },
+    {
+      "step": 72,
+      "H_kernel_ms": 0.02048699980150559,
+      "Ez_kernel_ms": 0.020883000161120435,
+      "energy_memset_ms": 0.017729999854054768,
+      "energy_kernel_ms": 0.14188400018610992,
+      "energy_d2h_ms": 0.04984499992133351,
+      "is_snapshot": false,
+      "total_step_ms": 0.2508289999241242
+    },
+    {
+      "step": 73,
+      "H_kernel_ms": 0.04136300003665383,
+      "Ez_kernel_ms": 0.02763500015134923,
+      "energy_memset_ms": 0.025889000426104758,
+      "energy_kernel_ms": 0.13971899988973746,
+      "energy_d2h_ms": 0.049280999974143924,
+      "is_snapshot": false,
+      "total_step_ms": 0.2838870004779892
+    },
+    {
+      "step": 74,
+      "H_kernel_ms": 0.024060999749053735,
+      "Ez_kernel_ms": 0.039010999898891896,
+      "energy_memset_ms": 0.035586000194598455,
+      "energy_kernel_ms": 0.13135500012140255,
+      "energy_d2h_ms": 0.036671000088972505,
+      "is_snapshot": false,
+      "total_step_ms": 0.26668400005291915
+    },
+    {
+      "step": 75,
+      "H_kernel_ms": 0.021520000245800475,
+      "Ez_kernel_ms": 0.02119999999194988,
+      "energy_memset_ms": 0.021435999769892078,
+      "energy_kernel_ms": 0.1270210000257066,
+      "energy_d2h_ms": 0.07386100014628028,
+      "is_snapshot": false,
+      "total_step_ms": 0.2650380001796293
+    },
+    {
+      "step": 76,
+      "H_kernel_ms": 0.028096000278310385,
+      "Ez_kernel_ms": 0.02298600020367303,
+      "energy_memset_ms": 0.023629000224900665,
+      "energy_kernel_ms": 0.11892499969690107,
+      "energy_d2h_ms": 0.050895000185846584,
+      "is_snapshot": false,
+      "total_step_ms": 0.24453100058963173
+    },
+    {
+      "step": 77,
+      "H_kernel_ms": 0.06957000005058944,
+      "Ez_kernel_ms": 0.03771899991988903,
+      "energy_memset_ms": 0.025225000172213186,
+      "energy_kernel_ms": 0.11947900020459201,
+      "energy_d2h_ms": 0.16035099997679936,
+      "is_snapshot": false,
+      "total_step_ms": 0.412344000324083
+    },
+    {
+      "step": 78,
+      "H_kernel_ms": 0.02291999999215477,
+      "Ez_kernel_ms": 0.021731999822804937,
+      "energy_memset_ms": 0.02118599968525814,
+      "energy_kernel_ms": 0.11829000004581758,
+      "energy_d2h_ms": 0.027844000214827247,
+      "is_snapshot": false,
+      "total_step_ms": 0.21197199976086267
+    },
+    {
+      "step": 79,
+      "H_kernel_ms": 0.01974199994947412,
+      "Ez_kernel_ms": 0.020777999907295452,
+      "energy_memset_ms": 0.017485000171291176,
+      "energy_kernel_ms": 0.11815799962278106,
+      "energy_d2h_ms": 0.02233499981230125,
+      "is_snapshot": false,
+      "total_step_ms": 0.19849799946314306
+    },
+    {
+      "step": 80,
+      "H_kernel_ms": 0.018746000023384113,
+      "Ez_kernel_ms": 0.019376000182091957,
+      "energy_memset_ms": 0.0156629998855351,
+      "energy_kernel_ms": 0.13679899984708754,
+      "energy_d2h_ms": 0.025237000045308378,
+      "snapshot_d2h_ms": 0.13698299972020322,
+      "is_snapshot": true,
+      "total_step_ms": 0.3528039997036103
+    },
+    {
+      "step": 81,
+      "H_kernel_ms": 0.025318000098195625,
+      "Ez_kernel_ms": 0.021935999939159956,
+      "energy_memset_ms": 0.030637999770988245,
+      "energy_kernel_ms": 0.11881599994012504,
+      "energy_d2h_ms": 0.027331000183039578,
+      "is_snapshot": false,
+      "total_step_ms": 0.22403899993150844
+    },
+    {
+      "step": 82,
+      "H_kernel_ms": 0.019460000203253003,
+      "Ez_kernel_ms": 0.01998900006583426,
+      "energy_memset_ms": 0.01757300015015062,
+      "energy_kernel_ms": 0.11989499989795149,
+      "energy_d2h_ms": 0.022450999949796824,
+      "is_snapshot": false,
+      "total_step_ms": 0.1993680002669862
+    },
+    {
+      "step": 83,
+      "H_kernel_ms": 0.018680000266613206,
+      "Ez_kernel_ms": 0.019849000182148302,
+      "energy_memset_ms": 0.016975000107777305,
+      "energy_kernel_ms": 0.11789600011979928,
+      "energy_d2h_ms": 0.021010999716963852,
+      "is_snapshot": false,
+      "total_step_ms": 0.19441100039330195
+    },
+    {
+      "step": 84,
+      "H_kernel_ms": 0.018943000213766936,
+      "Ez_kernel_ms": 0.019723000150406733,
+      "energy_memset_ms": 0.015793999864399666,
+      "energy_kernel_ms": 0.11785800006691716,
+      "energy_d2h_ms": 0.024491999738529557,
+      "is_snapshot": false,
+      "total_step_ms": 0.19681000003402005
+    },
+    {
+      "step": 85,
+      "H_kernel_ms": 0.020527999822661513,
+      "Ez_kernel_ms": 0.02000399990720325,
+      "energy_memset_ms": 0.016585000139457406,
+      "energy_kernel_ms": 0.11860299991894863,
+      "energy_d2h_ms": 0.030081000204518205,
+      "is_snapshot": false,
+      "total_step_ms": 0.205800999992789
+    },
+    {
+      "step": 86,
+      "H_kernel_ms": 0.020266999854356982,
+      "Ez_kernel_ms": 0.020011999822600046,
+      "energy_memset_ms": 0.017444000150135253,
+      "energy_kernel_ms": 0.11786400000346475,
+      "energy_d2h_ms": 0.02245800033051637,
+      "is_snapshot": false,
+      "total_step_ms": 0.1980450001610734
+    },
+    {
+      "step": 87,
+      "H_kernel_ms": 0.018973999885929516,
+      "Ez_kernel_ms": 0.024246000066341367,
+      "energy_memset_ms": 0.016340000001946464,
+      "energy_kernel_ms": 0.1181080001515511,
+      "energy_d2h_ms": 0.02169700019294396,
+      "is_snapshot": false,
+      "total_step_ms": 0.1993650002987124
+    },
+    {
+      "step": 88,
+      "H_kernel_ms": 0.018814999748428818,
+      "Ez_kernel_ms": 0.019676999727380462,
+      "energy_memset_ms": 0.01609799983270932,
+      "energy_kernel_ms": 0.1177939998342481,
+      "energy_d2h_ms": 0.02054900005532545,
+      "is_snapshot": false,
+      "total_step_ms": 0.19293299919809215
+    },
+    {
+      "step": 89,
+      "H_kernel_ms": 0.018636999811860733,
+      "Ez_kernel_ms": 0.01929199970618356,
+      "energy_memset_ms": 0.015611999970133184,
+      "energy_kernel_ms": 0.11812999991889228,
+      "energy_d2h_ms": 0.023533999865321675,
+      "is_snapshot": false,
+      "total_step_ms": 0.19520499927239143
+    },
+    {
+      "step": 90,
+      "H_kernel_ms": 0.02028800008702092,
+      "Ez_kernel_ms": 0.020008000319649,
+      "energy_memset_ms": 0.016389999927923782,
+      "energy_kernel_ms": 0.11804499990830664,
+      "energy_d2h_ms": 0.022930999875825364,
+      "is_snapshot": false,
+      "total_step_ms": 0.1976620001187257
+    },
+    {
+      "step": 91,
+      "H_kernel_ms": 0.01961999987543095,
+      "Ez_kernel_ms": 0.019429000076343073,
+      "energy_memset_ms": 0.01619400018171291,
+      "energy_kernel_ms": 0.11839500029964256,
+      "energy_d2h_ms": 0.021125999865034828,
+      "is_snapshot": false,
+      "total_step_ms": 0.19476400029816432
+    },
+    {
+      "step": 92,
+      "H_kernel_ms": 0.019195000277250074,
+      "Ez_kernel_ms": 0.019594000150391366,
+      "energy_memset_ms": 0.015594000160490396,
+      "energy_kernel_ms": 0.11857500021505984,
+      "energy_d2h_ms": 0.022328999875753652,
+      "is_snapshot": false,
+      "total_step_ms": 0.19528700067894533
+    },
+    {
+      "step": 93,
+      "H_kernel_ms": 0.019203999727324117,
+      "Ez_kernel_ms": 0.02002500013986719,
+      "energy_memset_ms": 0.016498000150022563,
+      "energy_kernel_ms": 0.11830799985546037,
+      "energy_d2h_ms": 0.0210889998015773,
+      "is_snapshot": false,
+      "total_step_ms": 0.19512399967425154
+    },
+    {
+      "step": 94,
+      "H_kernel_ms": 0.019222999981138855,
+      "Ez_kernel_ms": 0.01972599966393318,
+      "energy_memset_ms": 0.01564900003359071,
+      "energy_kernel_ms": 0.11899600031028967,
+      "energy_d2h_ms": 0.023260000034497352,
+      "is_snapshot": false,
+      "total_step_ms": 0.19685400002344977
+    },
+    {
+      "step": 95,
+      "H_kernel_ms": 0.018782999632094288,
+      "Ez_kernel_ms": 0.02002099972742144,
+      "energy_memset_ms": 0.016772999970271485,
+      "energy_kernel_ms": 0.1186520003102487,
+      "energy_d2h_ms": 0.02293700026712031,
+      "is_snapshot": false,
+      "total_step_ms": 0.19716599990715622
+    },
+    {
+      "step": 96,
+      "H_kernel_ms": 0.019170999621564988,
+      "Ez_kernel_ms": 0.019380999674467603,
+      "energy_memset_ms": 0.01634599993849406,
+      "energy_kernel_ms": 0.11789200016210089,
+      "energy_d2h_ms": 0.02050300008704653,
+      "is_snapshot": false,
+      "total_step_ms": 0.19329299948367407
+    },
+    {
+      "step": 97,
+      "H_kernel_ms": 0.018543999885878293,
+      "Ez_kernel_ms": 0.02022400030909921,
+      "energy_memset_ms": 0.015448999874934088,
+      "energy_kernel_ms": 0.1177929998448235,
+      "energy_d2h_ms": 0.020944999960192945,
+      "is_snapshot": false,
+      "total_step_ms": 0.19295499987492803
+    },
+    {
+      "step": 98,
+      "H_kernel_ms": 0.018305000139662297,
+      "Ez_kernel_ms": 0.018894000277214218,
+      "energy_memset_ms": 0.01575799979036674,
+      "energy_kernel_ms": 0.11800099991887691,
+      "energy_d2h_ms": 0.020815999960177578,
+      "is_snapshot": false,
+      "total_step_ms": 0.19177400008629775
+    },
+    {
+      "step": 99,
+      "H_kernel_ms": 0.029679999897780363,
+      "Ez_kernel_ms": 0.02157099970645504,
+      "energy_memset_ms": 0.01704500027699396,
+      "energy_kernel_ms": 0.11816100004580221,
+      "energy_d2h_ms": 0.022772000193072017,
+      "is_snapshot": false,
+      "total_step_ms": 0.2092290001201036
+    },
+    {
+      "step": 100,
+      "H_kernel_ms": 0.018895000266638817,
+      "Ez_kernel_ms": 0.019738999981200323,
+      "energy_memset_ms": 0.01650100011829636,
+      "energy_kernel_ms": 0.11879000021508546,
+      "energy_d2h_ms": 0.022292999801720725,
+      "is_snapshot": false,
+      "total_step_ms": 0.19621800038294168
+    },
+    {
+      "step": 101,
+      "H_kernel_ms": 0.3507450001052348,
+      "Ez_kernel_ms": 0.04821599986826186,
+      "energy_memset_ms": 0.04704999992100056,
+      "energy_kernel_ms": 0.1229810000040743,
+      "energy_d2h_ms": 0.04286900002625771,
+      "is_snapshot": false,
+      "total_step_ms": 0.6118609999248292
+    },
+    {
+      "step": 102,
+      "H_kernel_ms": 0.02076900000247406,
+      "Ez_kernel_ms": 0.028233000193722546,
+      "energy_memset_ms": 0.020683000002463814,
+      "energy_kernel_ms": 0.11840700017273775,
+      "energy_d2h_ms": 0.02686400011953083,
+      "is_snapshot": false,
+      "total_step_ms": 0.214956000490929
+    },
+    {
+      "step": 103,
+      "H_kernel_ms": 0.018605000150273554,
+      "Ez_kernel_ms": 0.02098599998134887,
+      "energy_memset_ms": 0.016930999663600232,
+      "energy_kernel_ms": 0.11860399990837323,
+      "energy_d2h_ms": 0.022386000182450516,
+      "is_snapshot": false,
+      "total_step_ms": 0.1975119998860464
+    },
+    {
+      "step": 104,
+      "H_kernel_ms": 0.0195429997802421,
+      "Ez_kernel_ms": 0.019596999663917813,
+      "energy_memset_ms": 0.016045000393205555,
+      "energy_kernel_ms": 0.11814599974968587,
+      "energy_d2h_ms": 0.021723999907408142,
+      "is_snapshot": false,
+      "total_step_ms": 0.19505499949445948
+    },
+    {
+      "step": 105,
+      "H_kernel_ms": 0.018877999991673278,
+      "Ez_kernel_ms": 0.019317000351293245,
+      "energy_memset_ms": 0.015889000223978655,
+      "energy_kernel_ms": 0.11831400024675531,
+      "energy_d2h_ms": 0.02467300009811879,
+      "is_snapshot": false,
+      "total_step_ms": 0.19707100091181928
+    },
+    {
+      "step": 106,
+      "H_kernel_ms": 0.020047999896632973,
+      "Ez_kernel_ms": 0.019808999695669627,
+      "energy_memset_ms": 0.01727800008666236,
+      "energy_kernel_ms": 0.1181799998448696,
+      "energy_d2h_ms": 0.029958999675727682,
+      "is_snapshot": false,
+      "total_step_ms": 0.20527399919956224
+    },
+    {
+      "step": 107,
+      "H_kernel_ms": 0.019304000034026103,
+      "Ez_kernel_ms": 0.019937999695684994,
+      "energy_memset_ms": 0.016389999927923782,
+      "energy_kernel_ms": 0.11813099990831688,
+      "energy_d2h_ms": 0.02155499987566145,
+      "is_snapshot": false,
+      "total_step_ms": 0.1953179994416132
+    },
+    {
+      "step": 108,
+      "H_kernel_ms": 0.019190000330127077,
+      "Ez_kernel_ms": 0.020303999917814508,
+      "energy_memset_ms": 0.015917000382614788,
+      "energy_kernel_ms": 0.11814399977083667,
+      "energy_d2h_ms": 0.020664000203396427,
+      "is_snapshot": false,
+      "total_step_ms": 0.19421900060478947
+    },
+    {
+      "step": 109,
+      "H_kernel_ms": 0.018743000055110315,
+      "Ez_kernel_ms": 0.01943500001289067,
+      "energy_memset_ms": 0.015892999726929702,
+      "energy_kernel_ms": 0.1184910001938988,
+      "energy_d2h_ms": 0.02265700004500104,
+      "is_snapshot": false,
+      "total_step_ms": 0.19521900003383053
+    },
+    {
+      "step": 110,
+      "H_kernel_ms": 0.019777000034082448,
+      "Ez_kernel_ms": 0.019942000108130742,
+      "energy_memset_ms": 0.016427999980805907,
+      "energy_kernel_ms": 0.11803699999290984,
+      "energy_d2h_ms": 0.023517000045103487,
+      "is_snapshot": false,
+      "total_step_ms": 0.19770100016103243
+    },
+    {
+      "step": 111,
+      "H_kernel_ms": 0.019576999875425827,
+      "Ez_kernel_ms": 0.0204729999495612,
+      "energy_memset_ms": 0.016726000012567965,
+      "energy_kernel_ms": 0.12335100018390222,
+      "energy_d2h_ms": 0.022684999748889823,
+      "is_snapshot": false,
+      "total_step_ms": 0.20281199977034703
+    },
+    {
+      "step": 112,
+      "H_kernel_ms": 0.018710000404098537,
+      "Ez_kernel_ms": 0.01996099990719813,
+      "energy_memset_ms": 0.016605999917373993,
+      "energy_kernel_ms": 0.11822399983429932,
+      "energy_d2h_ms": 0.022166999769979157,
+      "is_snapshot": false,
+      "total_step_ms": 0.19566799983294914
+    },
+    {
+      "step": 113,
+      "H_kernel_ms": 0.0196959999811952,
+      "Ez_kernel_ms": 0.019953999981225934,
+      "energy_memset_ms": 0.016228000276896637,
+      "energy_kernel_ms": 0.11766000034185709,
+      "energy_d2h_ms": 0.020773999949597055,
+      "is_snapshot": false,
+      "total_step_ms": 0.1943120005307719
+    },
+    {
+      "step": 114,
+      "H_kernel_ms": 0.01878400007626624,
+      "Ez_kernel_ms": 0.01944899986483506,
+      "energy_memset_ms": 0.015329999769164715,
+      "energy_kernel_ms": 0.11851499994008918,
+      "energy_d2h_ms": 0.021660000129486434,
+      "is_snapshot": false,
+      "total_step_ms": 0.19373799977984163
+    },
+    {
+      "step": 115,
+      "H_kernel_ms": 0.01882600008684676,
+      "Ez_kernel_ms": 0.019461000192677602,
+      "energy_memset_ms": 0.02853699970728485,
+      "energy_kernel_ms": 0.11940700005652616,
+      "energy_d2h_ms": 0.023036999664327595,
+      "is_snapshot": false,
+      "total_step_ms": 0.20926799970766297
+    },
+    {
+      "step": 116,
+      "H_kernel_ms": 0.019476000034046592,
+      "Ez_kernel_ms": 0.02022199987550266,
+      "energy_memset_ms": 0.016375000086554792,
+      "energy_kernel_ms": 0.11854900003527291,
+      "energy_d2h_ms": 0.02204100019298494,
+      "is_snapshot": false,
+      "total_step_ms": 0.1966630002243619
+    },
+    {
+      "step": 117,
+      "H_kernel_ms": 0.01913699998112861,
+      "Ez_kernel_ms": 0.01932500026669004,
+      "energy_memset_ms": 0.0162060000548081,
+      "energy_kernel_ms": 0.11862100018333877,
+      "energy_d2h_ms": 0.020900999970763223,
+      "is_snapshot": false,
+      "total_step_ms": 0.19419000045672874
+    },
+    {
+      "step": 118,
+      "H_kernel_ms": 0.01837899981183,
+      "Ez_kernel_ms": 0.01960300005521276,
+      "energy_memset_ms": 0.01596000038261991,
+      "energy_kernel_ms": 0.1178619995698682,
+      "energy_d2h_ms": 0.020422000034159282,
+      "is_snapshot": false,
+      "total_step_ms": 0.19222599985369015
+    },
+    {
+      "step": 119,
+      "H_kernel_ms": 0.01837900026657735,
+      "Ez_kernel_ms": 0.019647000044642482,
+      "energy_memset_ms": 0.015339999663410708,
+      "energy_kernel_ms": 0.11814700019385782,
+      "energy_d2h_ms": 0.020654000309150433,
+      "is_snapshot": false,
+      "total_step_ms": 0.1921670004776388
+    },
+    {
+      "step": 120,
+      "H_kernel_ms": 0.026950000119541073,
+      "Ez_kernel_ms": 0.022187000013218494,
+      "energy_memset_ms": 0.020785000288015,
+      "energy_kernel_ms": 0.1186540002890979,
+      "energy_d2h_ms": 0.024120000034599798,
+      "snapshot_d2h_ms": 0.12329799983490375,
+      "is_snapshot": true,
+      "total_step_ms": 0.335994000579376
+    },
+    {
+      "step": 121,
+      "H_kernel_ms": 0.02501399967513862,
+      "Ez_kernel_ms": 0.021132999791007023,
+      "energy_memset_ms": 0.021488999664143194,
+      "energy_kernel_ms": 0.11844199980259873,
+      "energy_d2h_ms": 0.02661100006662309,
+      "is_snapshot": false,
+      "total_step_ms": 0.21268899899951066
+    },
+    {
+      "step": 122,
+      "H_kernel_ms": 0.018800999896484427,
+      "Ez_kernel_ms": 0.019997999970655655,
+      "energy_memset_ms": 0.016289000086544547,
+      "energy_kernel_ms": 0.1179470000352012,
+      "energy_d2h_ms": 0.02208600017183926,
+      "is_snapshot": false,
+      "total_step_ms": 0.1951210001607251
+    },
+    {
+      "step": 123,
+      "H_kernel_ms": 0.019210000118619064,
+      "Ez_kernel_ms": 0.01906199986478896,
+      "energy_memset_ms": 0.016169999980775174,
+      "energy_kernel_ms": 0.11760500001400942,
+      "energy_d2h_ms": 0.021637999907397898,
+      "is_snapshot": false,
+      "total_step_ms": 0.19368499988559051
+    },
+    {
+      "step": 124,
+      "H_kernel_ms": 0.019160000192641746,
+      "Ez_kernel_ms": 0.03624200007834588,
+      "energy_memset_ms": 0.01690399994913605,
+      "energy_kernel_ms": 0.11806900010924437,
+      "energy_d2h_ms": 0.023236999822984217,
+      "is_snapshot": false,
+      "total_step_ms": 0.21361200015235227
+    },
+    {
+      "step": 125,
+      "H_kernel_ms": 0.018600000203150557,
+      "Ez_kernel_ms": 0.019511999653332168,
+      "energy_memset_ms": 0.022739999621990137,
+      "energy_kernel_ms": 0.11854200010930072,
+      "energy_d2h_ms": 0.026609000087773893,
+      "is_snapshot": false,
+      "total_step_ms": 0.20600299967554747
+    },
+    {
+      "step": 126,
+      "H_kernel_ms": 0.019858000086969696,
+      "Ez_kernel_ms": 0.019530000372469658,
+      "energy_memset_ms": 0.016184999822144164,
+      "energy_kernel_ms": 0.1177839999400021,
+      "energy_d2h_ms": 0.021253999875625595,
+      "is_snapshot": false,
+      "total_step_ms": 0.19461100009721122
+    },
+    {
+      "step": 127,
+      "H_kernel_ms": 0.01889199984361767,
+      "Ez_kernel_ms": 0.01947700002347119,
+      "energy_memset_ms": 0.01541599976917496,
+      "energy_kernel_ms": 0.11820800000350573,
+      "energy_d2h_ms": 0.020480999864957994,
+      "is_snapshot": false,
+      "total_step_ms": 0.19247399950472754
+    },
+    {
+      "step": 128,
+      "H_kernel_ms": 0.018384000213700347,
+      "Ez_kernel_ms": 0.019470000097498996,
+      "energy_memset_ms": 0.015392000022984575,
+      "energy_kernel_ms": 0.12369700016279239,
+      "energy_d2h_ms": 0.02247100019303616,
+      "is_snapshot": false,
+      "total_step_ms": 0.19941400069001247
+    },
+    {
+      "step": 129,
+      "H_kernel_ms": 0.019787000383075792,
+      "Ez_kernel_ms": 0.025887999981932808,
+      "energy_memset_ms": 0.01700000029813964,
+      "energy_kernel_ms": 0.11786300001404015,
+      "energy_d2h_ms": 0.024885999664547853,
+      "is_snapshot": false,
+      "total_step_ms": 0.20542400034173625
+    },
+    {
+      "step": 130,
+      "H_kernel_ms": 0.019285999769635964,
+      "Ez_kernel_ms": 0.019644999611045932,
+      "energy_memset_ms": 0.016103999769256916,
+      "energy_kernel_ms": 0.1245429998562031,
+      "energy_d2h_ms": 0.020927000150550157,
+      "is_snapshot": false,
+      "total_step_ms": 0.20050499915669207
+    },
+    {
+      "step": 131,
+      "H_kernel_ms": 0.017980999928113306,
+      "Ez_kernel_ms": 0.019698999949468998,
+      "energy_memset_ms": 0.01512300013928325,
+      "energy_kernel_ms": 0.11689799976011273,
+      "energy_d2h_ms": 0.020124000002397224,
+      "is_snapshot": false,
+      "total_step_ms": 0.1898249997793755
+    },
+    {
+      "step": 132,
+      "H_kernel_ms": 0.018587999875308014,
+      "Ez_kernel_ms": 0.019266999970568577,
+      "energy_memset_ms": 0.014905999705661088,
+      "energy_kernel_ms": 0.11751600004572538,
+      "energy_d2h_ms": 0.0201579996428336,
+      "is_snapshot": false,
+      "total_step_ms": 0.19043499924009666
+    },
+    {
+      "step": 133,
+      "H_kernel_ms": 0.018348999674344668,
+      "Ez_kernel_ms": 0.01887200005512568,
+      "energy_memset_ms": 0.01501500037193182,
+      "energy_kernel_ms": 0.11802700009866385,
+      "energy_d2h_ms": 0.02293600027769571,
+      "is_snapshot": false,
+      "total_step_ms": 0.19319900047776173
+    },
+    {
+      "step": 134,
+      "H_kernel_ms": 0.019119000171485823,
+      "Ez_kernel_ms": 0.019241999780206243,
+      "energy_memset_ms": 0.016233000224019634,
+      "energy_kernel_ms": 0.11711000024661189,
+      "energy_d2h_ms": 0.022328000341076404,
+      "is_snapshot": false,
+      "total_step_ms": 0.1940320007634
+    },
+    {
+      "step": 135,
+      "H_kernel_ms": 0.019049000002269167,
+      "Ez_kernel_ms": 0.019612999949458754,
+      "energy_memset_ms": 0.01611299967407831,
+      "energy_kernel_ms": 0.11845300014101667,
+      "energy_d2h_ms": 0.02110700006596744,
+      "is_snapshot": false,
+      "total_step_ms": 0.19433499983279034
+    },
+    {
+      "step": 136,
+      "H_kernel_ms": 0.018854999780160142,
+      "Ez_kernel_ms": 0.02213099969594623,
+      "energy_memset_ms": 0.015299000097002136,
+      "energy_kernel_ms": 0.11724100022547645,
+      "energy_d2h_ms": 0.02045399969574646,
+      "is_snapshot": false,
+      "total_step_ms": 0.19397999949433142
+    },
+    {
+      "step": 137,
+      "H_kernel_ms": 0.018886000361817423,
+      "Ez_kernel_ms": 0.01919799979077652,
+      "energy_memset_ms": 0.015402999906655168,
+      "energy_kernel_ms": 0.11752299997169757,
+      "energy_d2h_ms": 0.020586000118782977,
+      "is_snapshot": false,
+      "total_step_ms": 0.19159600014972966
+    },
+    {
+      "step": 138,
+      "H_kernel_ms": 0.02517200027796207,
+      "Ez_kernel_ms": 0.01887400003397488,
+      "energy_memset_ms": 0.015100999917194713,
+      "energy_kernel_ms": 0.11845800008813967,
+      "energy_d2h_ms": 0.02445800009809318,
+      "is_snapshot": false,
+      "total_step_ms": 0.2020630004153645
+    },
+    {
+      "step": 139,
+      "H_kernel_ms": 0.020623000182240503,
+      "Ez_kernel_ms": 0.02048900023510214,
+      "energy_memset_ms": 0.019288000203232514,
+      "energy_kernel_ms": 0.11829799996121437,
+      "energy_d2h_ms": 0.02360400003453833,
+      "is_snapshot": false,
+      "total_step_ms": 0.20230200061632786
+    },
+    {
+      "step": 140,
+      "H_kernel_ms": 0.020200999642838724,
+      "Ez_kernel_ms": 0.02090799989673542,
+      "energy_memset_ms": 0.017348000255879015,
+      "energy_kernel_ms": 0.11862100018333877,
+      "energy_d2h_ms": 0.02216199982285616,
+      "is_snapshot": false,
+      "total_step_ms": 0.19923999980164808
+    },
+    {
+      "step": 141,
+      "H_kernel_ms": 0.019459999748505652,
+      "Ez_kernel_ms": 0.02028499966399977,
+      "energy_memset_ms": 0.016854000023158733,
+      "energy_kernel_ms": 0.1184059997285658,
+      "energy_d2h_ms": 0.02248900000267895,
+      "is_snapshot": false,
+      "total_step_ms": 0.1974939991669089
+    },
+    {
+      "step": 142,
+      "H_kernel_ms": 0.0199309997697128,
+      "Ez_kernel_ms": 0.02033300006587524,
+      "energy_memset_ms": 0.01645399970584549,
+      "energy_kernel_ms": 0.11891299982380588,
+      "energy_d2h_ms": 0.021906000256421976,
+      "is_snapshot": false,
+      "total_step_ms": 0.19753699962166138
+    },
+    {
+      "step": 143,
+      "H_kernel_ms": 0.019144999896525405,
+      "Ez_kernel_ms": 0.028046000352333067,
+      "energy_memset_ms": 0.018104999981005676,
+      "energy_kernel_ms": 0.11953399962294498,
+      "energy_d2h_ms": 0.022431000161304837,
+      "is_snapshot": false,
+      "total_step_ms": 0.20726100001411396
+    },
+    {
+      "step": 144,
+      "H_kernel_ms": 0.01833200030887383,
+      "Ez_kernel_ms": 0.020683000002463814,
+      "energy_memset_ms": 0.01647199997023563,
+      "energy_kernel_ms": 0.12423799989846884,
+      "energy_d2h_ms": 0.022572000034415396,
+      "is_snapshot": false,
+      "total_step_ms": 0.2022970002144575
+    },
+    {
+      "step": 145,
+      "H_kernel_ms": 0.019501000224408926,
+      "Ez_kernel_ms": 0.020568999843817437,
+      "energy_memset_ms": 0.016647000393277267,
+      "energy_kernel_ms": 0.1181879997602664,
+      "energy_d2h_ms": 0.021485999695869396,
+      "is_snapshot": false,
+      "total_step_ms": 0.19639099991763942
+    },
+    {
+      "step": 146,
+      "H_kernel_ms": 0.0198530001398467,
+      "Ez_kernel_ms": 0.01988199983316008,
+      "energy_memset_ms": 0.016272999801003607,
+      "energy_kernel_ms": 0.11728799972843262,
+      "energy_d2h_ms": 0.021567000203503994,
+      "is_snapshot": false,
+      "total_step_ms": 0.194862999705947
+    },
+    {
+      "step": 147,
+      "H_kernel_ms": 0.01963599970622454,
+      "Ez_kernel_ms": 0.020097000287933042,
+      "energy_memset_ms": 0.016216999938478693,
+      "energy_kernel_ms": 0.11877200040544267,
+      "energy_d2h_ms": 0.09192900006382843,
+      "is_snapshot": false,
+      "total_step_ms": 0.26665100040190737
+    },
+    {
+      "step": 148,
+      "H_kernel_ms": 0.0281500001619861,
+      "Ez_kernel_ms": 0.02304700001332094,
+      "energy_memset_ms": 0.02348099997107056,
+      "energy_kernel_ms": 0.1315139998041559,
+      "energy_d2h_ms": 0.028879999717901228,
+      "is_snapshot": false,
+      "total_step_ms": 0.23507199966843473
+    },
+    {
+      "step": 149,
+      "H_kernel_ms": 0.01945000030900701,
+      "Ez_kernel_ms": 0.0198530001398467,
+      "energy_memset_ms": 0.018136999642592855,
+      "energy_kernel_ms": 0.11729800007742597,
+      "energy_d2h_ms": 0.02255200024592341,
+      "is_snapshot": false,
+      "total_step_ms": 0.19729000041479594
+    },
+    {
+      "step": 150,
+      "H_kernel_ms": 0.018753999938780908,
+      "Ez_kernel_ms": 0.03431699997236137,
+      "energy_memset_ms": 0.01617699990674737,
+      "energy_kernel_ms": 0.12539999988803174,
+      "energy_d2h_ms": 0.021414999991975492,
+      "is_snapshot": false,
+      "total_step_ms": 0.21606299969789688
+    },
+    {
+      "step": 151,
+      "H_kernel_ms": 0.020862999917881098,
+      "Ez_kernel_ms": 0.02002500013986719,
+      "energy_memset_ms": 0.01632999965295312,
+      "energy_kernel_ms": 0.11851500039483653,
+      "energy_d2h_ms": 0.020570999822666636,
+      "is_snapshot": false,
+      "total_step_ms": 0.19630399992820458
+    },
+    {
+      "step": 152,
+      "H_kernel_ms": 0.021840000044903718,
+      "Ez_kernel_ms": 0.019220000012865057,
+      "energy_memset_ms": 0.031124000088311732,
+      "energy_kernel_ms": 0.11853700016217772,
+      "energy_d2h_ms": 0.024031000066315755,
+      "is_snapshot": false,
+      "total_step_ms": 0.21475200037457398
+    },
+    {
+      "step": 153,
+      "H_kernel_ms": 0.02171500000258675,
+      "Ez_kernel_ms": 0.02728300023591146,
+      "energy_memset_ms": 0.017351000224152813,
+      "energy_kernel_ms": 0.11806099973910023,
+      "energy_d2h_ms": 0.022195999918039888,
+      "is_snapshot": false,
+      "total_step_ms": 0.20660600011979113
+    },
+    {
+      "step": 154,
+      "H_kernel_ms": 0.018510000245441915,
+      "Ez_kernel_ms": 0.01924599973790464,
+      "energy_memset_ms": 0.015630000234523322,
+      "energy_kernel_ms": 0.11709899990819395,
+      "energy_d2h_ms": 0.020524000319710467,
+      "is_snapshot": false,
+      "total_step_ms": 0.1910090004457743
+    },
+    {
+      "step": 155,
+      "H_kernel_ms": 0.01845299993874505,
+      "Ez_kernel_ms": 0.01915600023494335,
+      "energy_memset_ms": 0.015066999822010985,
+      "energy_kernel_ms": 0.11775399980251677,
+      "energy_d2h_ms": 0.02107599993905751,
+      "is_snapshot": false,
+      "total_step_ms": 0.19150599973727367
+    },
+    {
+      "step": 156,
+      "H_kernel_ms": 0.01933900011863443,
+      "Ez_kernel_ms": 0.02014599976973841,
+      "energy_memset_ms": 0.01538500009701238,
+      "energy_kernel_ms": 0.12774200013154768,
+      "energy_d2h_ms": 0.03306899998278823,
+      "is_snapshot": false,
+      "total_step_ms": 0.21568100009972113
+    },
+    {
+      "step": 157,
+      "H_kernel_ms": 0.019825999970635166,
+      "Ez_kernel_ms": 0.019537000298441853,
+      "energy_memset_ms": 0.035260999993624864,
+      "energy_kernel_ms": 0.19460100020296522,
+      "energy_d2h_ms": 0.033260000236623455,
+      "is_snapshot": false,
+      "total_step_ms": 0.30248500070229056
+    },
+    {
+      "step": 158,
+      "H_kernel_ms": 0.025223000193363987,
+      "Ez_kernel_ms": 0.020896000023640227,
+      "energy_memset_ms": 0.021834000108356122,
+      "energy_kernel_ms": 0.11803899997175904,
+      "energy_d2h_ms": 0.024517000383639243,
+      "is_snapshot": false,
+      "total_step_ms": 0.21050900068075862
+    },
+    {
+      "step": 159,
+      "H_kernel_ms": 0.0190790001397545,
+      "Ez_kernel_ms": 0.019783999960054643,
+      "energy_memset_ms": 0.016491999758727616,
+      "energy_kernel_ms": 0.11763200018322095,
+      "energy_d2h_ms": 0.022576999981538393,
+      "is_snapshot": false,
+      "total_step_ms": 0.1955640000232961
+    },
+    {
+      "step": 160,
+      "H_kernel_ms": 0.018464000277162995,
+      "Ez_kernel_ms": 0.019522000002325512,
+      "energy_memset_ms": 0.016101999790407717,
+      "energy_kernel_ms": 0.14366400000653812,
+      "energy_d2h_ms": 0.06500000017695129,
+      "snapshot_d2h_ms": 0.12521000007836847,
+      "is_snapshot": true,
+      "total_step_ms": 0.3879620003317541
+    },
+    {
+      "step": 161,
+      "H_kernel_ms": 0.060154000038892264,
+      "Ez_kernel_ms": 0.026402999992569676,
+      "energy_memset_ms": 0.025572000140527962,
+      "energy_kernel_ms": 0.11862899964398821,
+      "energy_d2h_ms": 0.031833000321057625,
+      "is_snapshot": false,
+      "total_step_ms": 0.26259100013703573
+    },
+    {
+      "step": 162,
+      "H_kernel_ms": 0.0193089999811491,
+      "Ez_kernel_ms": 0.01975900022443966,
+      "energy_memset_ms": 0.016819999927975005,
+      "energy_kernel_ms": 0.11812899992946768,
+      "energy_d2h_ms": 0.022732000161340693,
+      "is_snapshot": false,
+      "total_step_ms": 0.19674900022437214
+    },
+    {
+      "step": 163,
+      "H_kernel_ms": 0.018569000076240627,
+      "Ez_kernel_ms": 0.01943300003404147,
+      "energy_memset_ms": 0.0164369998856273,
+      "energy_kernel_ms": 0.11790100006692228,
+      "energy_d2h_ms": 0.020979000055376673,
+      "is_snapshot": false,
+      "total_step_ms": 0.19331900011820835
+    },
+    {
+      "step": 164,
+      "H_kernel_ms": 0.018458999875292648,
+      "Ez_kernel_ms": 0.01960200006578816,
+      "energy_memset_ms": 0.015667999832658097,
+      "energy_kernel_ms": 0.1188079995699809,
+      "energy_d2h_ms": 0.024134999875968788,
+      "is_snapshot": false,
+      "total_step_ms": 0.1966719992196886
+    },
+    {
+      "step": 165,
+      "H_kernel_ms": 0.020437000330275623,
+      "Ez_kernel_ms": 0.01978699992832844,
+      "energy_memset_ms": 0.017080999896279536,
+      "energy_kernel_ms": 0.11805799977082643,
+      "energy_d2h_ms": 0.022155999886308564,
+      "is_snapshot": false,
+      "total_step_ms": 0.1975189998120186
+    },
+    {
+      "step": 166,
+      "H_kernel_ms": 0.019441000404185615,
+      "Ez_kernel_ms": 0.019998000425403006,
+      "energy_memset_ms": 0.016227999822149286,
+      "energy_kernel_ms": 0.11746300015147426,
+      "energy_d2h_ms": 0.02100000028804061,
+      "is_snapshot": false,
+      "total_step_ms": 0.19413000109125278
+    },
+    {
+      "step": 167,
+      "H_kernel_ms": 0.01856700009739143,
+      "Ez_kernel_ms": 0.019839999822579557,
+      "energy_memset_ms": 0.015564000023005065,
+      "energy_kernel_ms": 0.11798500008808332,
+      "energy_d2h_ms": 0.02099699986501946,
+      "is_snapshot": false,
+      "total_step_ms": 0.19295299989607884
+    },
+    {
+      "step": 168,
+      "H_kernel_ms": 0.018562000150268432,
+      "Ez_kernel_ms": 0.019452999822533457,
+      "energy_memset_ms": 0.015669999811507296,
+      "energy_kernel_ms": 0.11765599992941134,
+      "energy_d2h_ms": 0.020941000002494548,
+      "is_snapshot": false,
+      "total_step_ms": 0.19228199971621507
+    },
+    {
+      "step": 169,
+      "H_kernel_ms": 0.018637999801285332,
+      "Ez_kernel_ms": 0.019468000118649798,
+      "energy_memset_ms": 0.02864699990823283,
+      "energy_kernel_ms": 0.11923500005650567,
+      "energy_d2h_ms": 0.021926000044913962,
+      "is_snapshot": false,
+      "total_step_ms": 0.2079139999295876
+    },
+    {
+      "step": 170,
+      "H_kernel_ms": 0.018573999568616273,
+      "Ez_kernel_ms": 0.01974099996004952,
+      "energy_memset_ms": 0.01656499989621807,
+      "energy_kernel_ms": 0.11775599978136597,
+      "energy_d2h_ms": 0.022090000129537657,
+      "is_snapshot": false,
+      "total_step_ms": 0.1947259993357875
+    },
+    {
+      "step": 171,
+      "H_kernel_ms": 0.0193089999811491,
+      "Ez_kernel_ms": 0.019611999960034154,
+      "energy_memset_ms": 0.016182999843294965,
+      "energy_kernel_ms": 0.11785400010921876,
+      "energy_d2h_ms": 0.021710000055463752,
+      "is_snapshot": false,
+      "total_step_ms": 0.19466799994916073
+    },
+    {
+      "step": 172,
+      "H_kernel_ms": 0.019159000203217147,
+      "Ez_kernel_ms": 0.019519000034051714,
+      "energy_memset_ms": 0.015438999980688095,
+      "energy_kernel_ms": 0.11758700020436663,
+      "energy_d2h_ms": 0.020648999907280086,
+      "is_snapshot": false,
+      "total_step_ms": 0.19235300032960367
+    },
+    {
+      "step": 173,
+      "H_kernel_ms": 0.05984500012345961,
+      "Ez_kernel_ms": 0.024667000161571195,
+      "energy_memset_ms": 0.019888000224455027,
+      "energy_kernel_ms": 0.12021400016237749,
+      "energy_d2h_ms": 0.02949700001408928,
+      "is_snapshot": false,
+      "total_step_ms": 0.2541110006859526
+    },
+    {
+      "step": 174,
+      "H_kernel_ms": 0.02161899965358316,
+      "Ez_kernel_ms": 0.020731999939016532,
+      "energy_memset_ms": 0.01797699997041491,
+      "energy_kernel_ms": 0.11829899995063897,
+      "energy_d2h_ms": 0.045495999984268565,
+      "is_snapshot": false,
+      "total_step_ms": 0.22412299949792214
+    },
+    {
+      "step": 175,
+      "H_kernel_ms": 0.02118199972755974,
+      "Ez_kernel_ms": 0.0206260001505143,
+      "energy_memset_ms": 0.018600999737827806,
+      "energy_kernel_ms": 0.11806400016212137,
+      "energy_d2h_ms": 0.022569999600818846,
+      "is_snapshot": false,
+      "total_step_ms": 0.20104299937884207
+    },
+    {
+      "step": 176,
+      "H_kernel_ms": 0.018428000203130068,
+      "Ez_kernel_ms": 0.01971200026673614,
+      "energy_memset_ms": 0.01570799986438942,
+      "energy_kernel_ms": 0.11721500004568952,
+      "energy_d2h_ms": 0.02135399972758023,
+      "is_snapshot": false,
+      "total_step_ms": 0.19241700010752538
+    },
+    {
+      "step": 177,
+      "H_kernel_ms": 0.01944799987541046,
+      "Ez_kernel_ms": 0.020073000086995307,
+      "energy_memset_ms": 0.015748999885545345,
+      "energy_kernel_ms": 0.11767700016207527,
+      "energy_d2h_ms": 0.021116999960213434,
+      "is_snapshot": false,
+      "total_step_ms": 0.19406399997023982
+    },
+    {
+      "step": 178,
+      "H_kernel_ms": 0.01936899980137241,
+      "Ez_kernel_ms": 0.019131000044581015,
+      "energy_memset_ms": 0.015450000319106039,
+      "energy_kernel_ms": 0.11798900004578172,
+      "energy_d2h_ms": 0.024760000087553635,
+      "is_snapshot": false,
+      "total_step_ms": 0.19669900029839482
+    },
+    {
+      "step": 179,
+      "H_kernel_ms": 0.020778000362042803,
+      "Ez_kernel_ms": 0.020992999907321064,
+      "energy_memset_ms": 0.017056000160664553,
+      "energy_kernel_ms": 0.11865399983435054,
+      "energy_d2h_ms": 0.02301599988641101,
+      "is_snapshot": false,
+      "total_step_ms": 0.20049700015078997
+    },
+    {
+      "step": 180,
+      "H_kernel_ms": 0.019904000055248616,
+      "Ez_kernel_ms": 0.01982100002351217,
+      "energy_memset_ms": 0.016443999811599497,
+      "energy_kernel_ms": 0.11771299978136085,
+      "energy_d2h_ms": 0.021456000013131415,
+      "is_snapshot": false,
+      "total_step_ms": 0.19533799968485255
+    },
+    {
+      "step": 181,
+      "H_kernel_ms": 0.01874999998108251,
+      "Ez_kernel_ms": 0.01912100015033502,
+      "energy_memset_ms": 0.01581699962116545,
+      "energy_kernel_ms": 0.11749800023608259,
+      "energy_d2h_ms": 0.021607999769912567,
+      "is_snapshot": false,
+      "total_step_ms": 0.19279399975857814
+    },
+    {
+      "step": 182,
+      "H_kernel_ms": 0.01866000002337387,
+      "Ez_kernel_ms": 0.01981800005523837,
+      "energy_memset_ms": 0.016694999885658035,
+      "energy_kernel_ms": 0.11775700022553792,
+      "energy_d2h_ms": 0.020726999991893535,
+      "is_snapshot": false,
+      "total_step_ms": 0.19365700018170173
+    },
+    {
+      "step": 183,
+      "H_kernel_ms": 0.01846899976953864,
+      "Ez_kernel_ms": 0.019271999917691574,
+      "energy_memset_ms": 0.030907000109436922,
+      "energy_kernel_ms": 0.11916200037376257,
+      "energy_d2h_ms": 0.023793999844201608,
+      "is_snapshot": false,
+      "total_step_ms": 0.2116040000146313
+    },
+    {
+      "step": 184,
+      "H_kernel_ms": 0.019329999759065686,
+      "Ez_kernel_ms": 0.01997699973799172,
+      "energy_memset_ms": 0.01572299970575841,
+      "energy_kernel_ms": 0.12427999990904937,
+      "energy_d2h_ms": 0.021953999748802744,
+      "is_snapshot": false,
+      "total_step_ms": 0.20126399886066793
+    },
+    {
+      "step": 185,
+      "H_kernel_ms": 0.024042999939410947,
+      "Ez_kernel_ms": 0.021010000182286603,
+      "energy_memset_ms": 0.016994000361592043,
+      "energy_kernel_ms": 0.11767499972847872,
+      "energy_d2h_ms": 0.022914000055607175,
+      "is_snapshot": false,
+      "total_step_ms": 0.2026360002673755
+    },
+    {
+      "step": 186,
+      "H_kernel_ms": 0.018854999780160142,
+      "Ez_kernel_ms": 0.019382000118639553,
+      "energy_memset_ms": 0.01594100012880517,
+      "energy_kernel_ms": 0.11759400013033883,
+      "energy_d2h_ms": 0.02112299989676103,
+      "is_snapshot": false,
+      "total_step_ms": 0.19289500005470472
+    },
+    {
+      "step": 187,
+      "H_kernel_ms": 0.018576000002212822,
+      "Ez_kernel_ms": 0.019861000055243494,
+      "energy_memset_ms": 0.015540999811491929,
+      "energy_kernel_ms": 0.11790799999289447,
+      "energy_d2h_ms": 0.03610799967646017,
+      "is_snapshot": false,
+      "total_step_ms": 0.2079939995383029
+    },
+    {
+      "step": 188,
+      "H_kernel_ms": 0.02055100003417465,
+      "Ez_kernel_ms": 0.020088999917788897,
+      "energy_memset_ms": 0.016649999906803714,
+      "energy_kernel_ms": 0.11814599974968587,
+      "energy_d2h_ms": 0.022699000055581564,
+      "is_snapshot": false,
+      "total_step_ms": 0.1981349996640347
+    },
+    {
+      "step": 189,
+      "H_kernel_ms": 0.025381000341440085,
+      "Ez_kernel_ms": 0.020599999970727367,
+      "energy_memset_ms": 0.016263999896182213,
+      "energy_kernel_ms": 0.1179390001198044,
+      "energy_d2h_ms": 0.021801000002596993,
+      "is_snapshot": false,
+      "total_step_ms": 0.20198500033075106
+    },
+    {
+      "step": 190,
+      "H_kernel_ms": 0.018679999811865855,
+      "Ez_kernel_ms": 0.02494000000297092,
+      "energy_memset_ms": 0.017861999822343932,
+      "energy_kernel_ms": 0.11854900003527291,
+      "energy_d2h_ms": 0.02306299984411453,
+      "is_snapshot": false,
+      "total_step_ms": 0.20309399951656815
+    },
+    {
+      "step": 191,
+      "H_kernel_ms": 0.018957000065711327,
+      "Ez_kernel_ms": 0.019560000055207638,
+      "energy_memset_ms": 0.01684500011833734,
+      "energy_kernel_ms": 0.1185579999400943,
+      "energy_d2h_ms": 0.020541000139928656,
+      "is_snapshot": false,
+      "total_step_ms": 0.19446100031927926
+    },
+    {
+      "step": 192,
+      "H_kernel_ms": 0.018665999959921464,
+      "Ez_kernel_ms": 0.019779000012931647,
+      "energy_memset_ms": 0.015675000213377643,
+      "energy_kernel_ms": 0.11845100016216747,
+      "energy_d2h_ms": 0.02417599989712471,
+      "is_snapshot": false,
+      "total_step_ms": 0.19674700024552294
+    },
+    {
+      "step": 193,
+      "H_kernel_ms": 0.02003600002353778,
+      "Ez_kernel_ms": 0.01992800025618635,
+      "energy_memset_ms": 0.0196959999811952,
+      "energy_kernel_ms": 0.11805000031017698,
+      "energy_d2h_ms": 0.022731999706593342,
+      "is_snapshot": false,
+      "total_step_ms": 0.20044200027768966
+    },
+    {
+      "step": 194,
+      "H_kernel_ms": 0.02017699989664834,
+      "Ez_kernel_ms": 0.019749999864870915,
+      "energy_memset_ms": 0.017041000319295563,
+      "energy_kernel_ms": 0.11742100014089374,
+      "energy_d2h_ms": 0.021267000192892738,
+      "is_snapshot": false,
+      "total_step_ms": 0.1956560004146013
+    },
+    {
+      "step": 195,
+      "H_kernel_ms": 0.01842299980125972,
+      "Ez_kernel_ms": 0.019598000108089764,
+      "energy_memset_ms": 0.016256999970210018,
+      "energy_kernel_ms": 0.11805800022557378,
+      "energy_d2h_ms": 0.020926999695802806,
+      "is_snapshot": false,
+      "total_step_ms": 0.19326299980093609
+    },
+    {
+      "step": 196,
+      "H_kernel_ms": 0.01920099975905032,
+      "Ez_kernel_ms": 0.01993100022446015,
+      "energy_memset_ms": 0.015609000001859386,
+      "energy_kernel_ms": 0.11799300000348012,
+      "energy_d2h_ms": 0.020933000087097753,
+      "is_snapshot": false,
+      "total_step_ms": 0.19366700007594773
+    },
+    {
+      "step": 197,
+      "H_kernel_ms": 0.019147999864799203,
+      "Ez_kernel_ms": 0.01926100003402098,
+      "energy_memset_ms": 0.015673000234528445,
+      "energy_kernel_ms": 0.11860299991894863,
+      "energy_d2h_ms": 0.02310999980181805,
+      "is_snapshot": false,
+      "total_step_ms": 0.1957949998541153
+    },
+    {
+      "step": 198,
+      "H_kernel_ms": 0.019903000065824017,
+      "Ez_kernel_ms": 0.019499999780236976,
+      "energy_memset_ms": 0.016648999917379115,
+      "energy_kernel_ms": 0.1179380001303798,
+      "energy_d2h_ms": 0.026637000246410025,
+      "is_snapshot": false,
+      "total_step_ms": 0.20062700014022994
+    },
+    {
+      "step": 199,
+      "H_kernel_ms": 0.019423999674472725,
+      "Ez_kernel_ms": 0.019863000034092693,
+      "energy_memset_ms": 0.016776000393292634,
+      "energy_kernel_ms": 0.11764100008804235,
+      "energy_d2h_ms": 0.0219480002670025,
+      "is_snapshot": false,
+      "total_step_ms": 0.1956520004569029
+    },
+    {
+      "step": 200,
+      "H_kernel_ms": 0.019180999970558332,
+      "Ez_kernel_ms": 0.019350999991729623,
+      "energy_memset_ms": 0.016900999980862252,
+      "energy_kernel_ms": 0.1194079995912034,
+      "energy_d2h_ms": 0.028434999876481015,
+      "snapshot_d2h_ms": 0.11837300007755402,
+      "is_snapshot": true,
+      "total_step_ms": 0.32164899948838865
+    },
+    {
+      "step": 201,
+      "H_kernel_ms": 0.032853999982762616,
+      "Ez_kernel_ms": 0.022386000182450516,
+      "energy_memset_ms": 0.043602999994618585,
+      "energy_kernel_ms": 0.12008900012006052,
+      "energy_d2h_ms": 0.03266099975007819,
+      "is_snapshot": false,
+      "total_step_ms": 0.2515930000299704
+    },
+    {
+      "step": 202,
+      "H_kernel_ms": 0.01917200006573694,
+      "Ez_kernel_ms": 0.020233999748597853,
+      "energy_memset_ms": 0.027054999918618705,
+      "energy_kernel_ms": 0.1184860002467758,
+      "energy_d2h_ms": 0.024357999791391194,
+      "is_snapshot": false,
+      "total_step_ms": 0.2093049997711205
+    },
+    {
+      "step": 203,
+      "H_kernel_ms": 0.018972999896504916,
+      "Ez_kernel_ms": 0.0202410001293174,
+      "energy_memset_ms": 0.01694899992799037,
+      "energy_kernel_ms": 0.11923900001420407,
+      "energy_d2h_ms": 0.022681000245938776,
+      "is_snapshot": false,
+      "total_step_ms": 0.19808300021395553
+    },
+    {
+      "step": 204,
+      "H_kernel_ms": 0.0190780001503299,
+      "Ez_kernel_ms": 0.019516999600455165,
+      "energy_memset_ms": 0.015930999779811827,
+      "energy_kernel_ms": 0.11803699999290984,
+      "energy_d2h_ms": 0.02132500003426685,
+      "is_snapshot": false,
+      "total_step_ms": 0.19388799955777358
+    },
+    {
+      "step": 205,
+      "H_kernel_ms": 0.01887700000224868,
+      "Ez_kernel_ms": 0.01952599996002391,
+      "energy_memset_ms": 0.016178999885596568,
+      "energy_kernel_ms": 0.12095200008843676,
+      "energy_d2h_ms": 0.025056000140466494,
+      "is_snapshot": false,
+      "total_step_ms": 0.2005900000767724
+    },
+    {
+      "step": 206,
+      "H_kernel_ms": 0.020427999970706878,
+      "Ez_kernel_ms": 0.019954999970650533,
+      "energy_memset_ms": 0.017191999631904764,
+      "energy_kernel_ms": 0.1173989999188052,
+      "energy_d2h_ms": 0.028113000098528573,
+      "is_snapshot": false,
+      "total_step_ms": 0.20308699959059595
+    },
+    {
+      "step": 207,
+      "H_kernel_ms": 0.019440999949438265,
+      "Ez_kernel_ms": 0.019714999780262588,
+      "energy_memset_ms": 0.016824999875098,
+      "energy_kernel_ms": 0.11767899968617712,
+      "energy_d2h_ms": 0.0218679997487925,
+      "is_snapshot": false,
+      "total_step_ms": 0.19552799903976847
+    },
+    {
+      "step": 208,
+      "H_kernel_ms": 0.018617000023368746,
+      "Ez_kernel_ms": 0.019397999949433142,
+      "energy_memset_ms": 0.015855000128794927,
+      "energy_kernel_ms": 0.1274060000469035,
+      "energy_d2h_ms": 0.020559000404318795,
+      "is_snapshot": false,
+      "total_step_ms": 0.2018350005528191
+    },
+    {
+      "step": 209,
+      "H_kernel_ms": 0.018464999811840244,
+      "Ez_kernel_ms": 0.02448799978083116,
+      "energy_memset_ms": 0.02208500018241466,
+      "energy_kernel_ms": 0.12503400012064958,
+      "energy_d2h_ms": 0.021855999875697307,
+      "is_snapshot": false,
+      "total_step_ms": 0.21192799977143295
+    },
+    {
+      "step": 210,
+      "H_kernel_ms": 0.018746000023384113,
+      "Ez_kernel_ms": 0.019099999917671084,
+      "energy_memset_ms": 0.015762999737489736,
+      "energy_kernel_ms": 0.1181080001515511,
+      "energy_d2h_ms": 0.023426000097970245,
+      "is_snapshot": false,
+      "total_step_ms": 0.19514299992806627
+    },
+    {
+      "step": 211,
+      "H_kernel_ms": 0.020077000044693705,
+      "Ez_kernel_ms": 0.019908000012947014,
+      "energy_memset_ms": 0.01709099979052553,
+      "energy_kernel_ms": 0.11774699987654458,
+      "energy_d2h_ms": 0.02281600018250174,
+      "is_snapshot": false,
+      "total_step_ms": 0.19763899990721256
+    },
+    {
+      "step": 212,
+      "H_kernel_ms": 0.019979999706265517,
+      "Ez_kernel_ms": 0.019994000012957258,
+      "energy_memset_ms": 0.016304000382660888,
+      "energy_kernel_ms": 0.1177909998659743,
+      "energy_d2h_ms": 0.021643999843945494,
+      "is_snapshot": false,
+      "total_step_ms": 0.19571299981180346
+    },
+    {
+      "step": 213,
+      "H_kernel_ms": 0.018863000150304288,
+      "Ez_kernel_ms": 0.01921800003401586,
+      "energy_memset_ms": 0.015643000097043114,
+      "energy_kernel_ms": 0.11744499988708412,
+      "energy_d2h_ms": 0.020851000044785906,
+      "is_snapshot": false,
+      "total_step_ms": 0.1920200002132333
+    },
+    {
+      "step": 214,
+      "H_kernel_ms": 0.018671000361791812,
+      "Ez_kernel_ms": 0.01901499990708544,
+      "energy_memset_ms": 0.01567899971632869,
+      "energy_kernel_ms": 0.11789999962275033,
+      "energy_d2h_ms": 0.020683000002463814,
+      "is_snapshot": false,
+      "total_step_ms": 0.19194799961042008
+    },
+    {
+      "step": 215,
+      "H_kernel_ms": 0.018287999864696758,
+      "Ez_kernel_ms": 0.019408000298426487,
+      "energy_memset_ms": 0.022221000108402222,
+      "energy_kernel_ms": 0.12283400019441615,
+      "energy_d2h_ms": 0.029054000151518267,
+      "is_snapshot": false,
+      "total_step_ms": 0.21180500061745988
+    },
+    {
+      "step": 216,
+      "H_kernel_ms": 0.019934999727411196,
+      "Ez_kernel_ms": 0.02375699978074408,
+      "energy_memset_ms": 0.017504999959783163,
+      "energy_kernel_ms": 0.11788800020440249,
+      "energy_d2h_ms": 0.0223320002987748,
+      "is_snapshot": false,
+      "total_step_ms": 0.20141699997111573
+    },
+    {
+      "step": 217,
+      "H_kernel_ms": 0.018923999959952198,
+      "Ez_kernel_ms": 0.020017999759147642,
+      "energy_memset_ms": 0.015761999748065136,
+      "energy_kernel_ms": 0.1172399997813045,
+      "energy_d2h_ms": 0.020975000097678276,
+      "is_snapshot": false,
+      "total_step_ms": 0.19291899934614776
+    },
+    {
+      "step": 218,
+      "H_kernel_ms": 0.018419999832985923,
+      "Ez_kernel_ms": 0.019653999970614677,
+      "energy_memset_ms": 0.015288000213331543,
+      "energy_kernel_ms": 0.11801800019384245,
+      "energy_d2h_ms": 0.020638000023609493,
+      "is_snapshot": false,
+      "total_step_ms": 0.1920180002343841
+    },
+    {
+      "step": 219,
+      "H_kernel_ms": 0.018434000139677664,
+      "Ez_kernel_ms": 0.01941599975907593,
+      "energy_memset_ms": 0.015855000128794927,
+      "energy_kernel_ms": 0.12881200018455274,
+      "energy_d2h_ms": 0.02408499994999147,
+      "is_snapshot": false,
+      "total_step_ms": 0.20660200016209274
+    },
+    {
+      "step": 220,
+      "H_kernel_ms": 0.020463000055315206,
+      "Ez_kernel_ms": 0.020106999727431685,
+      "energy_memset_ms": 0.017375999959767796,
+      "energy_kernel_ms": 0.11781600005633663,
+      "energy_d2h_ms": 0.02362000032007927,
+      "is_snapshot": false,
+      "total_step_ms": 0.1993820001189306
+    },
+    {
+      "step": 221,
+      "H_kernel_ms": 0.019020999843633035,
+      "Ez_kernel_ms": 0.01999200003410806,
+      "energy_memset_ms": 0.016292000054818345,
+      "energy_kernel_ms": 0.11765899989768513,
+      "energy_d2h_ms": 0.02134099986506044,
+      "is_snapshot": false,
+      "total_step_ms": 0.19430499969530501
+    },
+    {
+      "step": 222,
+      "H_kernel_ms": 0.018835999981092755,
+      "Ez_kernel_ms": 0.019508000150381122,
+      "energy_memset_ms": 0.015514000097027747,
+      "energy_kernel_ms": 0.11728600020433078,
+      "energy_d2h_ms": 0.02062599969576695,
+      "is_snapshot": false,
+      "total_step_ms": 0.19177000012859935
+    },
+    {
+      "step": 223,
+      "H_kernel_ms": 0.018401000033918535,
+      "Ez_kernel_ms": 0.019608999991760356,
+      "energy_memset_ms": 0.015932000223983778,
+      "energy_kernel_ms": 0.11775099983424298,
+      "energy_d2h_ms": 0.020620000213966705,
+      "is_snapshot": false,
+      "total_step_ms": 0.19231300029787235
+    },
+    {
+      "step": 224,
+      "H_kernel_ms": 0.017963000118470518,
+      "Ez_kernel_ms": 0.019250000150350388,
+      "energy_memset_ms": 0.015612999959557783,
+      "energy_kernel_ms": 0.11825000001408625,
+      "energy_d2h_ms": 0.02354300022489042,
+      "is_snapshot": false,
+      "total_step_ms": 0.19461900046735536
+    },
+    {
+      "step": 225,
+      "H_kernel_ms": 0.02022099988607806,
+      "Ez_kernel_ms": 0.019982000139862066,
+      "energy_memset_ms": 0.016755000160628697,
+      "energy_kernel_ms": 0.1181759998871712,
+      "energy_d2h_ms": 0.022243999865168007,
+      "is_snapshot": false,
+      "total_step_ms": 0.19737799993890803
+    },
+    {
+      "step": 226,
+      "H_kernel_ms": 0.01935499994942802,
+      "Ez_kernel_ms": 0.019221000002289657,
+      "energy_memset_ms": 0.016276000224024756,
+      "energy_kernel_ms": 0.1175590000457305,
+      "energy_d2h_ms": 0.02067400009764242,
+      "is_snapshot": false,
+      "total_step_ms": 0.19308500031911535
+    },
+    {
+      "step": 227,
+      "H_kernel_ms": 0.018263999663759023,
+      "Ez_kernel_ms": 0.019364999843674013,
+      "energy_memset_ms": 0.01614600023458479,
+      "energy_kernel_ms": 0.11758799973904388,
+      "energy_d2h_ms": 0.020617999780370155,
+      "is_snapshot": false,
+      "total_step_ms": 0.19198099926143186
+    },
+    {
+      "step": 228,
+      "H_kernel_ms": 0.018376000298303552,
+      "Ez_kernel_ms": 0.019984999653388513,
+      "energy_memset_ms": 0.015977999737515347,
+      "energy_kernel_ms": 0.117630999739049,
+      "energy_d2h_ms": 0.02042699998128228,
+      "is_snapshot": false,
+      "total_step_ms": 0.1923969994095387
+    },
+    {
+      "step": 229,
+      "H_kernel_ms": 0.01900100005514105,
+      "Ez_kernel_ms": 0.019937999695684994,
+      "energy_memset_ms": 0.015753000297991093,
+      "energy_kernel_ms": 0.11826299987660605,
+      "energy_d2h_ms": 0.024714000119274715,
+      "is_snapshot": false,
+      "total_step_ms": 0.1976690000446979
+    },
+    {
+      "step": 230,
+      "H_kernel_ms": 0.019878000330209034,
+      "Ez_kernel_ms": 0.019505999716784572,
+      "energy_memset_ms": 0.016892999610718107,
+      "energy_kernel_ms": 0.11820100007753354,
+      "energy_d2h_ms": 0.021778999780508457,
+      "is_snapshot": false,
+      "total_step_ms": 0.1962569995157537
+    },
+    {
+      "step": 231,
+      "H_kernel_ms": 0.01918599991768133,
+      "Ez_kernel_ms": 0.019826999960059766,
+      "energy_memset_ms": 0.016131999927893048,
+      "energy_kernel_ms": 0.11807000009866897,
+      "energy_d2h_ms": 0.02099999983329326,
+      "is_snapshot": false,
+      "total_step_ms": 0.19421499973759637
+    },
+    {
+      "step": 232,
+      "H_kernel_ms": 0.02002200017159339,
+      "Ez_kernel_ms": 0.020158000097580953,
+      "energy_memset_ms": 0.016694999885658035,
+      "energy_kernel_ms": 0.11771999970733305,
+      "energy_d2h_ms": 0.021768999886262463,
+      "is_snapshot": false,
+      "total_step_ms": 0.1963639997484279
+    },
+    {
+      "step": 233,
+      "H_kernel_ms": 0.019187999896530528,
+      "Ez_kernel_ms": 0.01975899976969231,
+      "energy_memset_ms": 0.016499000139447162,
+      "energy_kernel_ms": 0.12186300000394112,
+      "energy_d2h_ms": 0.021518000266951276,
+      "is_snapshot": false,
+      "total_step_ms": 0.1988270000765624
+    },
+    {
+      "step": 234,
+      "H_kernel_ms": 0.01908900003400049,
+      "Ez_kernel_ms": 0.019753999822569313,
+      "energy_memset_ms": 0.018136000107915606,
+      "energy_kernel_ms": 0.11914900005649542,
+      "energy_d2h_ms": 0.023691000023973174,
+      "is_snapshot": false,
+      "total_step_ms": 0.199819000044954
+    },
+    {
+      "step": 235,
+      "H_kernel_ms": 0.024344999928871403,
+      "Ez_kernel_ms": 0.02579400006652577,
+      "energy_memset_ms": 0.02123000012943521,
+      "energy_kernel_ms": 0.12002399989796686,
+      "energy_d2h_ms": 0.023099000372894807,
+      "is_snapshot": false,
+      "total_step_ms": 0.21449200039569405
+    },
+    {
+      "step": 236,
+      "H_kernel_ms": 0.020588000097632175,
+      "Ez_kernel_ms": 0.020755999685206916,
+      "energy_memset_ms": 0.017483999727119226,
+      "energy_kernel_ms": 0.1179390001198044,
+      "energy_d2h_ms": 0.021827999717061175,
+      "is_snapshot": false,
+      "total_step_ms": 0.1985949993468239
+    },
+    {
+      "step": 237,
+      "H_kernel_ms": 0.018714000361796934,
+      "Ez_kernel_ms": 0.019563000023481436,
+      "energy_memset_ms": 0.016449000213469844,
+      "energy_kernel_ms": 0.11870399976032786,
+      "energy_d2h_ms": 0.020436999875528272,
+      "is_snapshot": false,
+      "total_step_ms": 0.19386700023460435
+    },
+    {
+      "step": 238,
+      "H_kernel_ms": 0.01856099970609648,
+      "Ez_kernel_ms": 0.023453999801859027,
+      "energy_memset_ms": 0.01624100013941643,
+      "energy_kernel_ms": 0.12672699995164294,
+      "energy_d2h_ms": 0.023148999844124774,
+      "is_snapshot": false,
+      "total_step_ms": 0.20813199944313965
+    },
+    {
+      "step": 239,
+      "H_kernel_ms": 0.028185000246594427,
+      "Ez_kernel_ms": 0.020898999991914025,
+      "energy_memset_ms": 0.017512999875179958,
+      "energy_kernel_ms": 0.11858000016218284,
+      "energy_d2h_ms": 0.028880999707325827,
+      "is_snapshot": false,
+      "total_step_ms": 0.21405799998319708
+    },
+    {
+      "step": 240,
+      "H_kernel_ms": 0.019967999833170325,
+      "Ez_kernel_ms": 0.021037000351498136,
+      "energy_memset_ms": 0.01651699994908995,
+      "energy_kernel_ms": 0.1192720001199632,
+      "energy_d2h_ms": 0.02248800001325435,
+      "snapshot_d2h_ms": 0.12044300001434749,
+      "is_snapshot": true,
+      "total_step_ms": 0.31972500028132345
+    },
+    {
+      "step": 241,
+      "H_kernel_ms": 0.024126999960571993,
+      "Ez_kernel_ms": 0.021025000023655593,
+      "energy_memset_ms": 0.020855000002484303,
+      "energy_kernel_ms": 0.11856600031023845,
+      "energy_d2h_ms": 0.024617000235593878,
+      "is_snapshot": false,
+      "total_step_ms": 0.20919000053254422
+    },
+    {
+      "step": 242,
+      "H_kernel_ms": 0.01972699965335778,
+      "Ez_kernel_ms": 0.019950000023527537,
+      "energy_memset_ms": 0.017346000277029816,
+      "energy_kernel_ms": 0.11850300006699399,
+      "energy_d2h_ms": 0.0212489999285026,
+      "is_snapshot": false,
+      "total_step_ms": 0.19677499994941172
+    },
+    {
+      "step": 243,
+      "H_kernel_ms": 0.02141799996024929,
+      "Ez_kernel_ms": 0.020930000118823955,
+      "energy_memset_ms": 0.01764699982231832,
+      "energy_kernel_ms": 0.11768000013034907,
+      "energy_d2h_ms": 0.029209000331320567,
+      "is_snapshot": false,
+      "total_step_ms": 0.2068840003630612
+    },
+    {
+      "step": 244,
+      "H_kernel_ms": 0.019610999970609555,
+      "Ez_kernel_ms": 0.020117999611102277,
+      "energy_memset_ms": 0.017000999832816888,
+      "energy_kernel_ms": 0.11789300015152548,
+      "energy_d2h_ms": 0.0210919997698511,
+      "is_snapshot": false,
+      "total_step_ms": 0.1957149993359053
+    },
+    {
+      "step": 245,
+      "H_kernel_ms": 0.018978000298375264,
+      "Ez_kernel_ms": 0.019146999875374604,
+      "energy_memset_ms": 0.015953999991324963,
+      "energy_kernel_ms": 0.11784599973907461,
+      "energy_d2h_ms": 0.020309000319684856,
+      "is_snapshot": false,
+      "total_step_ms": 0.1922340002238343
+    },
+    {
+      "step": 246,
+      "H_kernel_ms": 0.018468000234861393,
+      "Ez_kernel_ms": 0.018709999949351186,
+      "energy_memset_ms": 0.015135000012378441,
+      "energy_kernel_ms": 0.11673800008793478,
+      "energy_d2h_ms": 0.02061400027741911,
+      "is_snapshot": false,
+      "total_step_ms": 0.1896650005619449
+    },
+    {
+      "step": 247,
+      "H_kernel_ms": 0.018461999843566446,
+      "Ez_kernel_ms": 0.019856999642797746,
+      "energy_memset_ms": 0.015515999621129595,
+      "energy_kernel_ms": 0.11782000001403503,
+      "energy_d2h_ms": 0.023678000161453383,
+      "is_snapshot": false,
+      "total_step_ms": 0.1953329992829822
+    },
+    {
+      "step": 248,
+      "H_kernel_ms": 0.019779000012931647,
+      "Ez_kernel_ms": 0.019792999864876037,
+      "energy_memset_ms": 0.016895000044314656,
+      "energy_kernel_ms": 0.11781700004576123,
+      "energy_d2h_ms": 0.022279999939200934,
+      "is_snapshot": false,
+      "total_step_ms": 0.1965639999070845
+    },
+    {
+      "step": 249,
+      "H_kernel_ms": 0.0198510001609975,
+      "Ez_kernel_ms": 0.019608999991760356,
+      "energy_memset_ms": 0.01647199997023563,
+      "energy_kernel_ms": 0.11779600026784465,
+      "energy_d2h_ms": 0.022873000034451252,
+      "is_snapshot": false,
+      "total_step_ms": 0.19660100042528939
+    },
+    {
+      "step": 250,
+      "H_kernel_ms": 0.018881999949371675,
+      "Ez_kernel_ms": 0.01977200008695945,
+      "energy_memset_ms": 0.016444000266346848,
+      "energy_kernel_ms": 0.11765899989768513,
+      "energy_d2h_ms": 0.021332999949663645,
+      "is_snapshot": false,
+      "total_step_ms": 0.19409000015002675
+    },
+    {
+      "step": 251,
+      "H_kernel_ms": 0.019522000002325512,
+      "Ez_kernel_ms": 0.019825999970635166,
+      "energy_memset_ms": 0.015859000086493324,
+      "energy_kernel_ms": 0.1173360001303081,
+      "energy_d2h_ms": 0.021443000150611624,
+      "is_snapshot": false,
+      "total_step_ms": 0.19398600034037372
+    },
+    {
+      "step": 252,
+      "H_kernel_ms": 0.01936900025611976,
+      "Ez_kernel_ms": 0.025859000288619427,
+      "energy_memset_ms": 0.015622000319126528,
+      "energy_kernel_ms": 0.11730899996109656,
+      "energy_d2h_ms": 0.024873000256775413,
+      "is_snapshot": false,
+      "total_step_ms": 0.2030320010817377
+    },
+    {
+      "step": 253,
+      "H_kernel_ms": 0.019924000298487954,
+      "Ez_kernel_ms": 0.019700999928318197,
+      "energy_memset_ms": 0.01746499992805184,
+      "energy_kernel_ms": 0.11790000007749768,
+      "energy_d2h_ms": 0.02251899968541693,
+      "is_snapshot": false,
+      "total_step_ms": 0.1975089999177726
+    },
+    {
+      "step": 254,
+      "H_kernel_ms": 0.019198000245523872,
+      "Ez_kernel_ms": 0.01959000019269297,
+      "energy_memset_ms": 0.0162060000548081,
+      "energy_kernel_ms": 0.1177909998659743,
+      "energy_d2h_ms": 0.021253000340948347,
+      "is_snapshot": false,
+      "total_step_ms": 0.1940380006999476
+    },
+    {
+      "step": 255,
+      "H_kernel_ms": 0.018607000129122753,
+      "Ez_kernel_ms": 0.01957099993887823,
+      "energy_memset_ms": 0.01549199987493921,
+      "energy_kernel_ms": 0.11734700001397869,
+      "energy_d2h_ms": 0.021335000383260194,
+      "is_snapshot": false,
+      "total_step_ms": 0.19235200034017907
+    },
+    {
+      "step": 256,
+      "H_kernel_ms": 0.01822300009735045,
+      "Ez_kernel_ms": 0.019597000118665164,
+      "energy_memset_ms": 0.015469000118173426,
+      "energy_kernel_ms": 0.11786599998231395,
+      "energy_d2h_ms": 0.020615000266843708,
+      "is_snapshot": false,
+      "total_step_ms": 0.1917700005833467
+    },
+    {
+      "step": 257,
+      "H_kernel_ms": 0.018552999790699687,
+      "Ez_kernel_ms": 0.030914000035409117,
+      "energy_memset_ms": 0.017280000065511558,
+      "energy_kernel_ms": 0.12243099990882911,
+      "energy_d2h_ms": 0.0219470002775779,
+      "is_snapshot": false,
+      "total_step_ms": 0.21112500007802737
+    },
+    {
+      "step": 258,
+      "H_kernel_ms": 0.02282900004502153,
+      "Ez_kernel_ms": 0.019754999811993912,
+      "energy_memset_ms": 0.037815999803569866,
+      "energy_kernel_ms": 0.12016299979222822,
+      "energy_d2h_ms": 0.02501500011931057,
+      "is_snapshot": false,
+      "total_step_ms": 0.2255779995721241
+    },
+    {
+      "step": 259,
+      "H_kernel_ms": 0.018616000033944147,
+      "Ez_kernel_ms": 0.01975700024559046,
+      "energy_memset_ms": 0.017243000002054032,
+      "energy_kernel_ms": 0.11793199973908486,
+      "energy_d2h_ms": 0.020666000182245625,
+      "is_snapshot": false,
+      "total_step_ms": 0.19421400020291912
+    },
+    {
+      "step": 260,
+      "H_kernel_ms": 0.018653000097401673,
+      "Ez_kernel_ms": 0.019521000012900913,
+      "energy_memset_ms": 0.0151990002450475,
+      "energy_kernel_ms": 0.11771699973905925,
+      "energy_d2h_ms": 0.020696000319730956,
+      "is_snapshot": false,
+      "total_step_ms": 0.1917860004141403
+    },
+    {
+      "step": 261,
+      "H_kernel_ms": 0.018597999769554008,
+      "Ez_kernel_ms": 0.019361999875400215,
+      "energy_memset_ms": 0.015162999716267223,
+      "energy_kernel_ms": 0.11802700009866385,
+      "energy_d2h_ms": 0.03664499990918557,
+      "is_snapshot": false,
+      "total_step_ms": 0.20779499936907087
+    },
+    {
+      "step": 262,
+      "H_kernel_ms": 0.0204739999389858,
+      "Ez_kernel_ms": 0.01964800003406708,
+      "energy_memset_ms": 0.017124999885709258,
+      "energy_kernel_ms": 0.11771299978136085,
+      "energy_d2h_ms": 0.028853000003437046,
+      "is_snapshot": false,
+      "total_step_ms": 0.20381299964356003
+    },
+    {
+      "step": 263,
+      "H_kernel_ms": 0.01971500023500994,
+      "Ez_kernel_ms": 0.019722999695659382,
+      "energy_memset_ms": 0.016340000001946464,
+      "energy_kernel_ms": 0.11775799976021517,
+      "energy_d2h_ms": 0.021673999981430825,
+      "is_snapshot": false,
+      "total_step_ms": 0.19520999967426178
+    },
+    {
+      "step": 264,
+      "H_kernel_ms": 0.018824000107997563,
+      "Ez_kernel_ms": 0.019816000076389173,
+      "energy_memset_ms": 0.015999999959603883,
+      "energy_kernel_ms": 0.11790799999289447,
+      "energy_d2h_ms": 0.020898000002489425,
+      "is_snapshot": false,
+      "total_step_ms": 0.19344600013937452
+    },
+    {
+      "step": 265,
+      "H_kernel_ms": 0.018807999822456622,
+      "Ez_kernel_ms": 0.01949299985426478,
+      "energy_memset_ms": 0.015673000234528445,
+      "energy_kernel_ms": 0.11784000025727437,
+      "energy_d2h_ms": 0.021022000055381795,
+      "is_snapshot": false,
+      "total_step_ms": 0.192836000223906
+    },
+    {
+      "step": 266,
+      "H_kernel_ms": 0.018541999907029094,
+      "Ez_kernel_ms": 0.019485999928292586,
+      "energy_memset_ms": 0.0158200000441866,
+      "energy_kernel_ms": 0.11838599994007382,
+      "energy_d2h_ms": 0.02332500025659101,
+      "is_snapshot": false,
+      "total_step_ms": 0.1955590000761731
+    },
+    {
+      "step": 267,
+      "H_kernel_ms": 0.0200819999918167,
+      "Ez_kernel_ms": 0.01972499967450858,
+      "energy_memset_ms": 0.021391999780462356,
+      "energy_kernel_ms": 0.11818200027846615,
+      "energy_d2h_ms": 0.02343500000279164,
+      "is_snapshot": false,
+      "total_step_ms": 0.20281599972804543
+    },
+    {
+      "step": 268,
+      "H_kernel_ms": 0.02002400015044259,
+      "Ez_kernel_ms": 0.019763000182138057,
+      "energy_memset_ms": 0.017268000192416366,
+      "energy_kernel_ms": 0.11776600013035932,
+      "energy_d2h_ms": 0.021427999854495283,
+      "is_snapshot": false,
+      "total_step_ms": 0.1962490005098516
+    },
+    {
+      "step": 269,
+      "H_kernel_ms": 0.018793999970512232,
+      "Ez_kernel_ms": 0.01952499997059931,
+      "energy_memset_ms": 0.01606800014997134,
+      "energy_kernel_ms": 0.11797500019383733,
+      "energy_d2h_ms": 0.024803000087558758,
+      "is_snapshot": false,
+      "total_step_ms": 0.19716500037247897
+    },
+    {
+      "step": 270,
+      "H_kernel_ms": 0.01916799965329119,
+      "Ez_kernel_ms": 0.019577999864850426,
+      "energy_memset_ms": 0.01571199982208782,
+      "energy_kernel_ms": 0.11764500004574074,
+      "energy_d2h_ms": 0.02132700001311605,
+      "is_snapshot": false,
+      "total_step_ms": 0.19342999939908623
+    },
+    {
+      "step": 271,
+      "H_kernel_ms": 0.019282999801362166,
+      "Ez_kernel_ms": 0.01966399986486067,
+      "energy_memset_ms": 0.01589600014995085,
+      "energy_kernel_ms": 0.13328300019566086,
+      "energy_d2h_ms": 0.023444999897037633,
+      "is_snapshot": false,
+      "total_step_ms": 0.21157099990887218
+    },
+    {
+      "step": 272,
+      "H_kernel_ms": 0.0187659998118761,
+      "Ez_kernel_ms": 0.02048799979093019,
+      "energy_memset_ms": 0.017134000245278003,
+      "energy_kernel_ms": 0.11819400015156134,
+      "energy_d2h_ms": 0.02225800017185975,
+      "is_snapshot": false,
+      "total_step_ms": 0.19684000017150538
+    },
+    {
+      "step": 273,
+      "H_kernel_ms": 0.019859000076394295,
+      "Ez_kernel_ms": 0.020124999991821824,
+      "energy_memset_ms": 0.016651000350975664,
+      "energy_kernel_ms": 0.117716000204382,
+      "energy_d2h_ms": 0.021056000150565524,
+      "is_snapshot": false,
+      "total_step_ms": 0.1954070007741393
+    },
+    {
+      "step": 274,
+      "H_kernel_ms": 0.01867399987531826,
+      "Ez_kernel_ms": 0.01924800017150119,
+      "energy_memset_ms": 0.015940000139380572,
+      "energy_kernel_ms": 0.11798400009865873,
+      "energy_d2h_ms": 0.02065699982267688,
+      "is_snapshot": false,
+      "total_step_ms": 0.19250300010753563
+    },
+    {
+      "step": 275,
+      "H_kernel_ms": 0.01850400030889432,
+      "Ez_kernel_ms": 0.020637000034184894,
+      "energy_memset_ms": 0.016466000033688033,
+      "energy_kernel_ms": 0.11769299999286886,
+      "energy_d2h_ms": 0.021787000150652602,
+      "is_snapshot": false,
+      "total_step_ms": 0.1950870005202887
+    },
+    {
+      "step": 276,
+      "H_kernel_ms": 0.018275999991601566,
+      "Ez_kernel_ms": 0.03469700004643528,
+      "energy_memset_ms": 0.016603999938524794,
+      "energy_kernel_ms": 0.1369369997519243,
+      "energy_d2h_ms": 0.04199600016363547,
+      "is_snapshot": false,
+      "total_step_ms": 0.2485099998921214
+    },
+    {
+      "step": 277,
+      "H_kernel_ms": 0.02689500024644076,
+      "Ez_kernel_ms": 0.019917999907193007,
+      "energy_memset_ms": 0.016723000044294167,
+      "energy_kernel_ms": 0.11807999999291496,
+      "energy_d2h_ms": 0.02189899987570243,
+      "is_snapshot": false,
+      "total_step_ms": 0.20351500006654533
+    },
+    {
+      "step": 278,
+      "H_kernel_ms": 0.02728199979173951,
+      "Ez_kernel_ms": 0.019037999663851224,
+      "energy_memset_ms": 0.03431000004638918,
+      "energy_kernel_ms": 0.11766699981308193,
+      "energy_d2h_ms": 0.0208619999284565,
+      "is_snapshot": false,
+      "total_step_ms": 0.21915899924351834
+    },
+    {
+      "step": 279,
+      "H_kernel_ms": 0.018668999928195262,
+      "Ez_kernel_ms": 0.019735999558179174,
+      "energy_memset_ms": 0.016354999843315454,
+      "energy_kernel_ms": 0.11772800007747719,
+      "energy_d2h_ms": 0.020726999991893535,
+      "is_snapshot": false,
+      "total_step_ms": 0.19321499939906062
+    },
+    {
+      "step": 280,
+      "H_kernel_ms": 0.018662000002223067,
+      "Ez_kernel_ms": 0.019581999822548823,
+      "energy_memset_ms": 0.016203000086534303,
+      "energy_kernel_ms": 0.11794299962275545,
+      "energy_d2h_ms": 0.02290900010848418,
+      "snapshot_d2h_ms": 0.11879900011990685,
+      "is_snapshot": true,
+      "total_step_ms": 0.3140979997624527
+    },
+    {
+      "step": 281,
+      "H_kernel_ms": 0.029903999802627368,
+      "Ez_kernel_ms": 0.03508300005705678,
+      "energy_memset_ms": 0.02884700006688945,
+      "energy_kernel_ms": 0.11831500023617991,
+      "energy_d2h_ms": 0.027533999855222646,
+      "is_snapshot": false,
+      "total_step_ms": 0.23968300001797616
+    },
+    {
+      "step": 282,
+      "H_kernel_ms": 0.01916800010803854,
+      "Ez_kernel_ms": 0.023749999854771886,
+      "energy_memset_ms": 0.019115999748464674,
+      "energy_kernel_ms": 0.11765699991883594,
+      "energy_d2h_ms": 0.0210909997804265,
+      "is_snapshot": false,
+      "total_step_ms": 0.20078199941053754
+    },
+    {
+      "step": 283,
+      "H_kernel_ms": 0.018304999684914947,
+      "Ez_kernel_ms": 0.01943400002346607,
+      "energy_memset_ms": 0.01578599994900287,
+      "energy_kernel_ms": 0.11752199998227297,
+      "energy_d2h_ms": 0.020406000203365693,
+      "is_snapshot": false,
+      "total_step_ms": 0.19145299984302255
+    },
+    {
+      "step": 284,
+      "H_kernel_ms": 0.018712999917624984,
+      "Ez_kernel_ms": 0.019195999811927322,
+      "energy_memset_ms": 0.018385999737802194,
+      "energy_kernel_ms": 0.11805599979197723,
+      "energy_d2h_ms": 0.023221999981615227,
+      "is_snapshot": false,
+      "total_step_ms": 0.19757299924094696
+    },
+    {
+      "step": 285,
+      "H_kernel_ms": 0.020478999886108795,
+      "Ez_kernel_ms": 0.019647000044642482,
+      "energy_memset_ms": 0.016528999822185142,
+      "energy_kernel_ms": 0.11848399981317925,
+      "energy_d2h_ms": 0.022791999981564004,
+      "is_snapshot": false,
+      "total_step_ms": 0.19793099954767968
+    },
+    {
+      "step": 286,
+      "H_kernel_ms": 0.02929499987658346,
+      "Ez_kernel_ms": 0.01971100027731154,
+      "energy_memset_ms": 0.016527999832760543,
+      "energy_kernel_ms": 0.11774499989769538,
+      "energy_d2h_ms": 0.02092300019285176,
+      "is_snapshot": false,
+      "total_step_ms": 0.20420200007720268
+    },
+    {
+      "step": 287,
+      "H_kernel_ms": 0.019049000002269167,
+      "Ez_kernel_ms": 0.01977200008695945,
+      "energy_memset_ms": 0.01571400025568437,
+      "energy_kernel_ms": 0.11761699988710461,
+      "energy_d2h_ms": 0.02034799990724423,
+      "is_snapshot": false,
+      "total_step_ms": 0.19250000013926183
+    },
+    {
+      "step": 288,
+      "H_kernel_ms": 0.018245999854116235,
+      "Ez_kernel_ms": 0.019022000287804985,
+      "energy_memset_ms": 0.01850299986472237,
+      "energy_kernel_ms": 0.11780200020439224,
+      "energy_d2h_ms": 0.02078099987556925,
+      "is_snapshot": false,
+      "total_step_ms": 0.19435400008660508
+    },
+    {
+      "step": 289,
+      "H_kernel_ms": 0.018617000023368746,
+      "Ez_kernel_ms": 0.01936999979079701,
+      "energy_memset_ms": 0.01518299995950656,
+      "energy_kernel_ms": 0.11802300014096545,
+      "energy_d2h_ms": 0.022421999801736092,
+      "is_snapshot": false,
+      "total_step_ms": 0.19361499971637386
+    },
+    {
+      "step": 290,
+      "H_kernel_ms": 0.020558999949571444,
+      "Ez_kernel_ms": 0.019631000213848893,
+      "energy_memset_ms": 0.016508000044268556,
+      "energy_kernel_ms": 0.1183300000775489,
+      "energy_d2h_ms": 0.0221800000872463,
+      "is_snapshot": false,
+      "total_step_ms": 0.1972080003724841
+    },
+    {
+      "step": 291,
+      "H_kernel_ms": 0.019141999928251607,
+      "Ez_kernel_ms": 0.019632000203273492,
+      "energy_memset_ms": 0.016072000107669737,
+      "energy_kernel_ms": 0.11770899982366245,
+      "energy_d2h_ms": 0.020352000319689978,
+      "is_snapshot": false,
+      "total_step_ms": 0.19290700038254727
+    },
+    {
+      "step": 292,
+      "H_kernel_ms": 0.01844000007622526,
+      "Ez_kernel_ms": 0.0194660001398006,
+      "energy_memset_ms": 0.015565000012429664,
+      "energy_kernel_ms": 0.11768200010919827,
+      "energy_d2h_ms": 0.020227999812050257,
+      "is_snapshot": false,
+      "total_step_ms": 0.19138100014970405
+    },
+    {
+      "step": 293,
+      "H_kernel_ms": 0.01865500007625087,
+      "Ez_kernel_ms": 0.019519000034051714,
+      "energy_memset_ms": 0.015080000139278127,
+      "energy_kernel_ms": 0.11720800011971733,
+      "energy_d2h_ms": 0.020104999748582486,
+      "is_snapshot": false,
+      "total_step_ms": 0.19056700011788053
+    },
+    {
+      "step": 294,
+      "H_kernel_ms": 0.018483000076230383,
+      "Ez_kernel_ms": 0.03281500039520324,
+      "energy_memset_ms": 0.016908999896259047,
+      "energy_kernel_ms": 0.11857000026793685,
+      "energy_d2h_ms": 0.02244200004497543,
+      "is_snapshot": false,
+      "total_step_ms": 0.20921900068060495
+    },
+    {
+      "step": 295,
+      "H_kernel_ms": 0.018649000139703276,
+      "Ez_kernel_ms": 0.019909999991796212,
+      "energy_memset_ms": 0.022449999960372224,
+      "energy_kernel_ms": 0.11893600003531901,
+      "energy_d2h_ms": 0.024220999875979032,
+      "is_snapshot": false,
+      "total_step_ms": 0.20416600000316976
+    },
+    {
+      "step": 296,
+      "H_kernel_ms": 0.02097000015055528,
+      "Ez_kernel_ms": 0.019704999886016594,
+      "energy_memset_ms": 0.01732500004436588,
+      "energy_kernel_ms": 0.11786200002461555,
+      "energy_d2h_ms": 0.022216999695956474,
+      "is_snapshot": false,
+      "total_step_ms": 0.19807899980150978
+    },
+    {
+      "step": 297,
+      "H_kernel_ms": 0.018980000277224462,
+      "Ez_kernel_ms": 0.01941700020324788,
+      "energy_memset_ms": 0.015868999980739318,
+      "energy_kernel_ms": 0.11750800013032858,
+      "energy_d2h_ms": 0.02036600017163437,
+      "is_snapshot": false,
+      "total_step_ms": 0.1921400007631746
+    },
+    {
+      "step": 298,
+      "H_kernel_ms": 0.019038000118598575,
+      "Ez_kernel_ms": 0.01952399998117471,
+      "energy_memset_ms": 0.015282000276783947,
+      "energy_kernel_ms": 0.12031799997203052,
+      "energy_d2h_ms": 0.02296799993928289,
+      "is_snapshot": false,
+      "total_step_ms": 0.19713000028787064
+    },
+    {
+      "step": 299,
+      "H_kernel_ms": 0.02029899997069151,
+      "Ez_kernel_ms": 0.02042400001300848,
+      "energy_memset_ms": 0.017097000181820476,
+      "energy_kernel_ms": 0.1252920001206803,
+      "energy_d2h_ms": 0.02523100010876078,
+      "is_snapshot": false,
+      "total_step_ms": 0.20834300039496156
+    },
+    {
+      "step": 300,
+      "H_kernel_ms": 0.019749999864870915,
+      "Ez_kernel_ms": 0.019600000086938962,
+      "energy_memset_ms": 0.01658100018175901,
+      "energy_kernel_ms": 0.11768099966502632,
+      "energy_d2h_ms": 0.030636999781563645,
+      "is_snapshot": false,
+      "total_step_ms": 0.20424899958015885
+    },
+    {
+      "step": 301,
+      "H_kernel_ms": 0.024327000119228614,
+      "Ez_kernel_ms": 0.021303999801602913,
+      "energy_memset_ms": 0.019657999928313075,
+      "energy_kernel_ms": 0.11821799989775172,
+      "energy_d2h_ms": 0.02816300002450589,
+      "is_snapshot": false,
+      "total_step_ms": 0.21166999977140222
+    },
+    {
+      "step": 302,
+      "H_kernel_ms": 0.019904000055248616,
+      "Ez_kernel_ms": 0.019937999695684994,
+      "energy_memset_ms": 0.017171999843412777,
+      "energy_kernel_ms": 0.11753400031011552,
+      "energy_d2h_ms": 0.02175700001316727,
+      "is_snapshot": false,
+      "total_step_ms": 0.19630499991762917
+    },
+    {
+      "step": 303,
+      "H_kernel_ms": 0.018809000266628573,
+      "Ez_kernel_ms": 0.034516000141593395,
+      "energy_memset_ms": 0.018296000234840903,
+      "energy_kernel_ms": 0.11877799988724291,
+      "energy_d2h_ms": 0.023647000034543453,
+      "is_snapshot": false,
+      "total_step_ms": 0.21404600056484924
+    },
+    {
+      "step": 304,
+      "H_kernel_ms": 0.018742000065685716,
+      "Ez_kernel_ms": 0.01994700005525374,
+      "energy_memset_ms": 0.022288999844022328,
+      "energy_kernel_ms": 0.11891400026797783,
+      "energy_d2h_ms": 0.02219199996034149,
+      "is_snapshot": false,
+      "total_step_ms": 0.2020840001932811
+    },
+    {
+      "step": 305,
+      "H_kernel_ms": 0.018934000308945542,
+      "Ez_kernel_ms": 0.02005199985433137,
+      "energy_memset_ms": 0.01586299958944437,
+      "energy_kernel_ms": 0.11777300005633151,
+      "energy_d2h_ms": 0.02158799998142058,
+      "is_snapshot": false,
+      "total_step_ms": 0.19420999979047338
+    },
+    {
+      "step": 306,
+      "H_kernel_ms": 0.018898000234912615,
+      "Ez_kernel_ms": 0.019627999790827744,
+      "energy_memset_ms": 0.015794000319147017,
+      "energy_kernel_ms": 0.11760699999285862,
+      "energy_d2h_ms": 0.020636000044760294,
+      "is_snapshot": false,
+      "total_step_ms": 0.1925630003825063
+    },
+    {
+      "step": 307,
+      "H_kernel_ms": 0.024151000161509728,
+      "Ez_kernel_ms": 0.020745999790960923,
+      "energy_memset_ms": 0.024669000140420394,
+      "energy_kernel_ms": 0.12492100040617515,
+      "energy_d2h_ms": 0.023875999886513455,
+      "is_snapshot": false,
+      "total_step_ms": 0.21836300038557965
+    },
+    {
+      "step": 308,
+      "H_kernel_ms": 0.019909000002371613,
+      "Ez_kernel_ms": 0.02056199991784524,
+      "energy_memset_ms": 0.0163630002134596,
+      "energy_kernel_ms": 0.11803799998233444,
+      "energy_d2h_ms": 0.02067300010821782,
+      "is_snapshot": false,
+      "total_step_ms": 0.19554500022422872
+    },
+    {
+      "step": 309,
+      "H_kernel_ms": 0.020715000118798343,
+      "Ez_kernel_ms": 0.019906000034097815,
+      "energy_memset_ms": 0.01650300009714556,
+      "energy_kernel_ms": 0.11838399996122462,
+      "energy_d2h_ms": 0.02166700005545863,
+      "is_snapshot": false,
+      "total_step_ms": 0.19717500026672496
+    },
+    {
+      "step": 310,
+      "H_kernel_ms": 0.04336700021667639,
+      "Ez_kernel_ms": 0.022033000277588144,
+      "energy_memset_ms": 0.015706999874964822,
+      "energy_kernel_ms": 0.1172369998130307,
+      "energy_d2h_ms": 0.0208609999390319,
+      "is_snapshot": false,
+      "total_step_ms": 0.21920500012129196
+    },
+    {
+      "step": 311,
+      "H_kernel_ms": 0.018648999684955925,
+      "Ez_kernel_ms": 0.019640000118670287,
+      "energy_memset_ms": 0.015488999906665413,
+      "energy_kernel_ms": 0.1177090002784098,
+      "energy_d2h_ms": 0.021457000002556015,
+      "is_snapshot": false,
+      "total_step_ms": 0.19294399999125744
+    },
+    {
+      "step": 312,
+      "H_kernel_ms": 0.038639000194962136,
+      "Ez_kernel_ms": 0.020137000319664367,
+      "energy_memset_ms": 0.015980000171111897,
+      "energy_kernel_ms": 0.11767400019380148,
+      "energy_d2h_ms": 0.023302000045077875,
+      "is_snapshot": false,
+      "total_step_ms": 0.21573200092461775
+    },
+    {
+      "step": 313,
+      "H_kernel_ms": 0.02067400009764242,
+      "Ez_kernel_ms": 0.020156000118731754,
+      "energy_memset_ms": 0.016530000266357092,
+      "energy_kernel_ms": 0.11765899989768513,
+      "energy_d2h_ms": 0.022481000087282155,
+      "is_snapshot": false,
+      "total_step_ms": 0.19750000046769856
+    },
+    {
+      "step": 314,
+      "H_kernel_ms": 0.01934000010805903,
+      "Ez_kernel_ms": 0.0196969999706198,
+      "energy_memset_ms": 0.0162829996952496,
+      "energy_kernel_ms": 0.11734999998225248,
+      "energy_d2h_ms": 0.02073499990729033,
+      "is_snapshot": false,
+      "total_step_ms": 0.19340499966347124
+    },
+    {
+      "step": 315,
+      "H_kernel_ms": 0.019505999716784572,
+      "Ez_kernel_ms": 0.01963600016097189,
+      "energy_memset_ms": 0.015510999674006598,
+      "energy_kernel_ms": 0.11703000018314924,
+      "energy_d2h_ms": 0.020246000076440396,
+      "is_snapshot": false,
+      "total_step_ms": 0.1919289998113527
+    },
+    {
+      "step": 316,
+      "H_kernel_ms": 0.018649999674380524,
+      "Ez_kernel_ms": 0.019487999907141784,
+      "energy_memset_ms": 0.01580200023454381,
+      "energy_kernel_ms": 0.11735099997167708,
+      "energy_d2h_ms": 0.02051999990726472,
+      "is_snapshot": false,
+      "total_step_ms": 0.19181099969500792
+    },
+    {
+      "step": 317,
+      "H_kernel_ms": 0.018007999642577488,
+      "Ez_kernel_ms": 0.019419999716774328,
+      "energy_memset_ms": 0.028679000024567358,
+      "energy_kernel_ms": 0.11862400015161256,
+      "energy_d2h_ms": 0.022978999822953483,
+      "is_snapshot": false,
+      "total_step_ms": 0.20770999935848522
+    },
+    {
+      "step": 318,
+      "H_kernel_ms": 0.018867999642679933,
+      "Ez_kernel_ms": 0.019737000002351124,
+      "energy_memset_ms": 0.015766999695188133,
+      "energy_kernel_ms": 0.11737999966499046,
+      "energy_d2h_ms": 0.02380900014031795,
+      "is_snapshot": false,
+      "total_step_ms": 0.1955609991455276
+    },
+    {
+      "step": 319,
+      "H_kernel_ms": 0.020173999928374542,
+      "Ez_kernel_ms": 0.020390999907249352,
+      "energy_memset_ms": 0.016822999896248803,
+      "energy_kernel_ms": 0.12002800031041261,
+      "energy_d2h_ms": 0.02055200002359925,
+      "is_snapshot": false,
+      "total_step_ms": 0.19796800006588455
+    },
+    {
+      "step": 320,
+      "H_kernel_ms": 0.018385000203124946,
+      "Ez_kernel_ms": 0.019176000023435336,
+      "energy_memset_ms": 0.015220000022964086,
+      "energy_kernel_ms": 0.11797299976024078,
+      "energy_d2h_ms": 0.020108999706280883,
+      "snapshot_d2h_ms": 0.14714799999637762,
+      "is_snapshot": true,
+      "total_step_ms": 0.33801099971242365
+    },
+    {
+      "step": 321,
+      "H_kernel_ms": 0.022589999844058184,
+      "Ez_kernel_ms": 0.02090799989673542,
+      "energy_memset_ms": 0.0193099999705737,
+      "energy_kernel_ms": 0.11843299989777734,
+      "energy_d2h_ms": 0.027550000140763586,
+      "is_snapshot": false,
+      "total_step_ms": 0.20879099974990822
+    },
+    {
+      "step": 322,
+      "H_kernel_ms": 0.02039499986494775,
+      "Ez_kernel_ms": 0.019530000372469658,
+      "energy_memset_ms": 0.016922999748203438,
+      "energy_kernel_ms": 0.11789600011979928,
+      "energy_d2h_ms": 0.022249999801715603,
+      "is_snapshot": false,
+      "total_step_ms": 0.19699399990713573
+    },
+    {
+      "step": 323,
+      "H_kernel_ms": 0.018870000076276483,
+      "Ez_kernel_ms": 0.019424999663897324,
+      "energy_memset_ms": 0.015874999917286914,
+      "energy_kernel_ms": 0.11760799998228322,
+      "energy_d2h_ms": 0.02131000019289786,
+      "is_snapshot": false,
+      "total_step_ms": 0.1930879998326418
+    },
+    {
+      "step": 324,
+      "H_kernel_ms": 0.018822000129148364,
+      "Ez_kernel_ms": 0.019779000012931647,
+      "energy_memset_ms": 0.015637000160495518,
+      "energy_kernel_ms": 0.11776000019381172,
+      "energy_d2h_ms": 0.02073499990729033,
+      "is_snapshot": false,
+      "total_step_ms": 0.19273300040367758
+    },
+    {
+      "step": 325,
+      "H_kernel_ms": 0.018941999769594986,
+      "Ez_kernel_ms": 0.01977600004465785,
+      "energy_memset_ms": 0.015868999980739318,
+      "energy_kernel_ms": 0.12098599972887314,
+      "energy_d2h_ms": 0.02343500000279164,
+      "is_snapshot": false,
+      "total_step_ms": 0.19900799952665693
+    },
+    {
+      "step": 326,
+      "H_kernel_ms": 0.01896899993880652,
+      "Ez_kernel_ms": 0.036485000237007625,
+      "energy_memset_ms": 0.017736999780026963,
+      "energy_kernel_ms": 0.1177849999294267,
+      "energy_d2h_ms": 0.02330999996047467,
+      "is_snapshot": false,
+      "total_step_ms": 0.21428599984574248
+    },
+    {
+      "step": 327,
+      "H_kernel_ms": 0.01885900019260589,
+      "Ez_kernel_ms": 0.028280000151426066,
+      "energy_memset_ms": 0.016529000276932493,
+      "energy_kernel_ms": 0.11855499997182051,
+      "energy_d2h_ms": 0.02167999991797842,
+      "is_snapshot": false,
+      "total_step_ms": 0.20390300051076338
+    },
+    {
+      "step": 328,
+      "H_kernel_ms": 0.019408000298426487,
+      "Ez_kernel_ms": 0.019459000213828404,
+      "energy_memset_ms": 0.015677000192226842,
+      "energy_kernel_ms": 0.11855299999297131,
+      "energy_d2h_ms": 0.021134999769856222,
+      "is_snapshot": false,
+      "total_step_ms": 0.19423200046730926
+    },
+    {
+      "step": 329,
+      "H_kernel_ms": 0.018899999759014463,
+      "Ez_kernel_ms": 0.019442000393610215,
+      "energy_memset_ms": 0.015466000149899628,
+      "energy_kernel_ms": 0.11765199997171294,
+      "energy_d2h_ms": 0.020290000065870117,
+      "is_snapshot": false,
+      "total_step_ms": 0.19175000034010736
+    },
+    {
+      "step": 330,
+      "H_kernel_ms": 0.01980700017156778,
+      "Ez_kernel_ms": 0.019713999790837988,
+      "energy_memset_ms": 0.01566300034028245,
+      "energy_kernel_ms": 0.11826599984487984,
+      "energy_d2h_ms": 0.023955999949976103,
+      "is_snapshot": false,
+      "total_step_ms": 0.19740600009754417
+    },
+    {
+      "step": 331,
+      "H_kernel_ms": 0.020123000012972625,
+      "Ez_kernel_ms": 0.019749999864870915,
+      "energy_memset_ms": 0.0166709996847203,
+      "energy_kernel_ms": 0.12199899992992869,
+      "energy_d2h_ms": 0.030156999855535105,
+      "is_snapshot": false,
+      "total_step_ms": 0.20869999934802763
+    },
+    {
+      "step": 332,
+      "H_kernel_ms": 0.020204000065859873,
+      "Ez_kernel_ms": 0.020491999748628587,
+      "energy_memset_ms": 0.01667100013946765,
+      "energy_kernel_ms": 0.11852399984491058,
+      "energy_d2h_ms": 0.021208999896771275,
+      "is_snapshot": false,
+      "total_step_ms": 0.19709999969563796
+    },
+    {
+      "step": 333,
+      "H_kernel_ms": 0.01822100011850125,
+      "Ez_kernel_ms": 0.019848000192723703,
+      "energy_memset_ms": 0.016311999843310332,
+      "energy_kernel_ms": 0.11820800000350573,
+      "energy_d2h_ms": 0.021594999907392776,
+      "is_snapshot": false,
+      "total_step_ms": 0.1941840000654338
+    },
+    {
+      "step": 334,
+      "H_kernel_ms": 0.018884999917645473,
+      "Ez_kernel_ms": 0.019563000023481436,
+      "energy_memset_ms": 0.016406000213464722,
+      "energy_kernel_ms": 0.11723499983418151,
+      "energy_d2h_ms": 0.021475999801623402,
+      "is_snapshot": false,
+      "total_step_ms": 0.19356499979039654
+    },
+    {
+      "step": 335,
+      "H_kernel_ms": 0.018386000192549545,
+      "Ez_kernel_ms": 0.01963400018212269,
+      "energy_memset_ms": 0.015610999980708584,
+      "energy_kernel_ms": 0.11774699987654458,
+      "energy_d2h_ms": 0.02274999997098348,
+      "is_snapshot": false,
+      "total_step_ms": 0.19412800020290888
+    },
+    {
+      "step": 336,
+      "H_kernel_ms": 0.01949800025613513,
+      "Ez_kernel_ms": 0.019908000012947014,
+      "energy_memset_ms": 0.016372999652958242,
+      "energy_kernel_ms": 0.11782100000345963,
+      "energy_d2h_ms": 0.022080000235291664,
+      "is_snapshot": false,
+      "total_step_ms": 0.19568000016079168
+    },
+    {
+      "step": 337,
+      "H_kernel_ms": 0.019243000224378193,
+      "Ez_kernel_ms": 0.020155000129307155,
+      "energy_memset_ms": 0.015966999853844754,
+      "energy_kernel_ms": 0.21013700006733416,
+      "energy_d2h_ms": 0.03407099984542583,
+      "is_snapshot": false,
+      "total_step_ms": 0.2995730001202901
+    },
+    {
+      "step": 338,
+      "H_kernel_ms": 0.026624999918567482,
+      "Ez_kernel_ms": 0.021094999738124898,
+      "energy_memset_ms": 0.022322999939206056,
+      "energy_kernel_ms": 0.11852699981318437,
+      "energy_d2h_ms": 0.02262799989694031,
+      "is_snapshot": false,
+      "total_step_ms": 0.21119799930602312
+    },
+    {
+      "step": 339,
+      "H_kernel_ms": 0.01864100022430648,
+      "Ez_kernel_ms": 0.01988199983316008,
+      "energy_memset_ms": 0.01622099989617709,
+      "energy_kernel_ms": 0.11785800006691716,
+      "energy_d2h_ms": 0.023986000087461434,
+      "is_snapshot": false,
+      "total_step_ms": 0.19658800010802224
+    },
+    {
+      "step": 340,
+      "H_kernel_ms": 0.020063999727426562,
+      "Ez_kernel_ms": 0.020060999759152764,
+      "energy_memset_ms": 0.021103000108269043,
+      "energy_kernel_ms": 0.11907400039490312,
+      "energy_d2h_ms": 0.03350299994053785,
+      "is_snapshot": false,
+      "total_step_ms": 0.21380499993028934
+    },
+    {
+      "step": 341,
+      "H_kernel_ms": 0.020553000013023848,
+      "Ez_kernel_ms": 0.020017999759147642,
+      "energy_memset_ms": 0.01656499989621807,
+      "energy_kernel_ms": 0.11797500019383733,
+      "energy_d2h_ms": 0.02461299982314813,
+      "is_snapshot": false,
+      "total_step_ms": 0.19972399968537502
+    },
+    {
+      "step": 342,
+      "H_kernel_ms": 0.019237999822507845,
+      "Ez_kernel_ms": 0.020336000034149038,
+      "energy_memset_ms": 0.01600800032974803,
+      "energy_kernel_ms": 0.11731399990821956,
+      "energy_d2h_ms": 0.021538000055443263,
+      "is_snapshot": false,
+      "total_step_ms": 0.19443400015006773
+    },
+    {
+      "step": 343,
+      "H_kernel_ms": 0.018753999938780908,
+      "Ez_kernel_ms": 0.019864000023517292,
+      "energy_memset_ms": 0.01526100004412001,
+      "energy_kernel_ms": 0.11770299988711486,
+      "energy_d2h_ms": 0.020682000013039215,
+      "is_snapshot": false,
+      "total_step_ms": 0.19226399990657228
+    },
+    {
+      "step": 344,
+      "H_kernel_ms": 0.01866999991761986,
+      "Ez_kernel_ms": 0.01933899966388708,
+      "energy_memset_ms": 0.0154310000652913,
+      "energy_kernel_ms": 0.11840600018331315,
+      "energy_d2h_ms": 0.023616999897058122,
+      "is_snapshot": false,
+      "total_step_ms": 0.19546299972716952
+    },
+    {
+      "step": 345,
+      "H_kernel_ms": 0.020617000245692907,
+      "Ez_kernel_ms": 0.02051999990726472,
+      "energy_memset_ms": 0.017085000308725284,
+      "energy_kernel_ms": 0.11758700020436663,
+      "energy_d2h_ms": 0.022048000118957134,
+      "is_snapshot": false,
+      "total_step_ms": 0.19785700078500668
+    },
+    {
+      "step": 346,
+      "H_kernel_ms": 0.01911000026666443,
+      "Ez_kernel_ms": 0.019499000245559728,
+      "energy_memset_ms": 0.016244999642367475,
+      "energy_kernel_ms": 0.11781300008806284,
+      "energy_d2h_ms": 0.02174299970647553,
+      "is_snapshot": false,
+      "total_step_ms": 0.19440999994913
+    },
+    {
+      "step": 347,
+      "H_kernel_ms": 0.01943500001289067,
+      "Ez_kernel_ms": 0.01949599982253858,
+      "energy_memset_ms": 0.016039000001910608,
+      "energy_kernel_ms": 0.11751300007745158,
+      "energy_d2h_ms": 0.020944999960192945,
+      "is_snapshot": false,
+      "total_step_ms": 0.19342799987498438
+    },
+    {
+      "step": 348,
+      "H_kernel_ms": 0.018499000361771323,
+      "Ez_kernel_ms": 0.019629999769676942,
+      "energy_memset_ms": 0.015700000403739978,
+      "energy_kernel_ms": 0.11713999992934987,
+      "energy_d2h_ms": 0.020592000055330573,
+      "is_snapshot": false,
+      "total_step_ms": 0.19156100051986868
+    },
+    {
+      "step": 349,
+      "H_kernel_ms": 0.018475000160833588,
+      "Ez_kernel_ms": 0.019436000002315268,
+      "energy_memset_ms": 0.015275999885489,
+      "energy_kernel_ms": 0.13229900014266605,
+      "energy_d2h_ms": 0.02274899998155888,
+      "is_snapshot": false,
+      "total_step_ms": 0.20823500017286278
+    },
+    {
+      "step": 350,
+      "H_kernel_ms": 0.01974199994947412,
+      "Ez_kernel_ms": 0.020151999706286006,
+      "energy_memset_ms": 0.017396000203007134,
+      "energy_kernel_ms": 0.11772900006690179,
+      "energy_d2h_ms": 0.02186800020353985,
+      "is_snapshot": false,
+      "total_step_ms": 0.1968870001292089
+    },
+    {
+      "step": 351,
+      "H_kernel_ms": 0.01940500033015269,
+      "Ez_kernel_ms": 0.020012000277347397,
+      "energy_memset_ms": 0.01622199988560169,
+      "energy_kernel_ms": 0.1179440000669274,
+      "energy_d2h_ms": 0.020762000076501863,
+      "is_snapshot": false,
+      "total_step_ms": 0.19434500063653104
+    },
+    {
+      "step": 352,
+      "H_kernel_ms": 0.018557999737822684,
+      "Ez_kernel_ms": 0.01960100007636356,
+      "energy_memset_ms": 0.01573899999129935,
+      "energy_kernel_ms": 0.1177140002255328,
+      "energy_d2h_ms": 0.020385999960126355,
+      "is_snapshot": false,
+      "total_step_ms": 0.19199799999114475
+    },
+    {
+      "step": 353,
+      "H_kernel_ms": 0.01921700004459126,
+      "Ez_kernel_ms": 0.02011800006584963,
+      "energy_memset_ms": 0.01634699992791866,
+      "energy_kernel_ms": 0.1183250001304259,
+      "energy_d2h_ms": 0.0206290001187881,
+      "is_snapshot": false,
+      "total_step_ms": 0.19463600028757355
+    },
+    {
+      "step": 354,
+      "H_kernel_ms": 0.02779399983410258,
+      "Ez_kernel_ms": 0.021065000055386918,
+      "energy_memset_ms": 0.016616999801044585,
+      "energy_kernel_ms": 0.11812200000349549,
+      "energy_d2h_ms": 0.022576999981538393,
+      "is_snapshot": false,
+      "total_step_ms": 0.20617499967556796
+    },
+    {
+      "step": 355,
+      "H_kernel_ms": 0.018602999716677004,
+      "Ez_kernel_ms": 0.019653999970614677,
+      "energy_memset_ms": 0.016814999980852008,
+      "energy_kernel_ms": 0.11819499968623859,
+      "energy_d2h_ms": 0.021934999949735356,
+      "is_snapshot": false,
+      "total_step_ms": 0.19520199930411763
+    },
+    {
+      "step": 356,
+      "H_kernel_ms": 0.018773999727272894,
+      "Ez_kernel_ms": 0.01988500025618123,
+      "energy_memset_ms": 0.015732000065327156,
+      "energy_kernel_ms": 0.11742400010916754,
+      "energy_d2h_ms": 0.02084400011881371,
+      "is_snapshot": false,
+      "total_step_ms": 0.19265900027676253
+    },
+    {
+      "step": 357,
+      "H_kernel_ms": 0.01873400015028892,
+      "Ez_kernel_ms": 0.019473000065772794,
+      "energy_memset_ms": 0.015325999811466318,
+      "energy_kernel_ms": 0.11854800004584831,
+      "energy_d2h_ms": 0.021005999769840855,
+      "is_snapshot": false,
+      "total_step_ms": 0.1930869998432172
+    },
+    {
+      "step": 358,
+      "H_kernel_ms": 0.018714999896474183,
+      "Ez_kernel_ms": 0.019520000023476314,
+      "energy_memset_ms": 0.015562000044155866,
+      "energy_kernel_ms": 0.1258460001736239,
+      "energy_d2h_ms": 0.022910000097908778,
+      "is_snapshot": false,
+      "total_step_ms": 0.20255300023563905
+    },
+    {
+      "step": 359,
+      "H_kernel_ms": 0.020046999907208374,
+      "Ez_kernel_ms": 0.02003800000238698,
+      "energy_memset_ms": 0.01650300009714556,
+      "energy_kernel_ms": 0.11816500000350061,
+      "energy_d2h_ms": 0.027718000183085678,
+      "is_snapshot": false,
+      "total_step_ms": 0.2024710001933272
+    },
+    {
+      "step": 360,
+      "H_kernel_ms": 0.022525999611389125,
+      "Ez_kernel_ms": 0.01989699967452907,
+      "energy_memset_ms": 0.017425999885745114,
+      "energy_kernel_ms": 0.11760100005631102,
+      "energy_d2h_ms": 0.021644999833370093,
+      "snapshot_d2h_ms": 0.11525699983394588,
+      "is_snapshot": true,
+      "total_step_ms": 0.3143519988952903
+    },
+    {
+      "step": 361,
+      "H_kernel_ms": 0.025514999833831098,
+      "Ez_kernel_ms": 0.02261400004499592,
+      "energy_memset_ms": 0.023678000161453383,
+      "energy_kernel_ms": 0.1196620000882831,
+      "energy_d2h_ms": 0.02701699986573658,
+      "is_snapshot": false,
+      "total_step_ms": 0.21848599999430007
+    },
+    {
+      "step": 362,
+      "H_kernel_ms": 0.020032000065839384,
+      "Ez_kernel_ms": 0.021985999865137273,
+      "energy_memset_ms": 0.022912000076757977,
+      "energy_kernel_ms": 0.12955300007888582,
+      "energy_d2h_ms": 0.026476999664737377,
+      "is_snapshot": false,
+      "total_step_ms": 0.22095999975135783
+    },
+    {
+      "step": 363,
+      "H_kernel_ms": 0.02106300007653772,
+      "Ez_kernel_ms": 0.021553999886236852,
+      "energy_memset_ms": 0.019319000330142444,
+      "energy_kernel_ms": 0.12001499999314547,
+      "energy_d2h_ms": 0.03010500040545594,
+      "is_snapshot": false,
+      "total_step_ms": 0.21205600069151842
+    },
+    {
+      "step": 364,
+      "H_kernel_ms": 0.02087400025629904,
+      "Ez_kernel_ms": 0.021653999738191487,
+      "energy_memset_ms": 0.018584999907034216,
+      "energy_kernel_ms": 0.11929999982385198,
+      "energy_d2h_ms": 0.023142999907577178,
+      "is_snapshot": false,
+      "total_step_ms": 0.2035559996329539
+    },
+    {
+      "step": 365,
+      "H_kernel_ms": 0.020199000118736876,
+      "Ez_kernel_ms": 0.020958999812137336,
+      "energy_memset_ms": 0.01806899990697275,
+      "energy_kernel_ms": 0.11884000014106277,
+      "energy_d2h_ms": 0.021072999970783712,
+      "is_snapshot": false,
+      "total_step_ms": 0.19913999994969345
+    },
+    {
+      "step": 366,
+      "H_kernel_ms": 0.018831000033969758,
+      "Ez_kernel_ms": 0.01994300009755534,
+      "energy_memset_ms": 0.01578800038259942,
+      "energy_kernel_ms": 0.11736099986592308,
+      "energy_d2h_ms": 0.020645999939006288,
+      "is_snapshot": false,
+      "total_step_ms": 0.19256900031905388
+    },
+    {
+      "step": 367,
+      "H_kernel_ms": 0.01848700003392878,
+      "Ez_kernel_ms": 0.019582000277296174,
+      "energy_memset_ms": 0.015668000287405448,
+      "energy_kernel_ms": 0.11880700003530364,
+      "energy_d2h_ms": 0.02344799986531143,
+      "is_snapshot": false,
+      "total_step_ms": 0.19599200049924548
+    },
+    {
+      "step": 368,
+      "H_kernel_ms": 0.019859000076394295,
+      "Ez_kernel_ms": 0.019871999938914087,
+      "energy_memset_ms": 0.01696800018180511,
+      "energy_kernel_ms": 0.1181749998977466,
+      "energy_d2h_ms": 0.02206799990744912,
+      "is_snapshot": false,
+      "total_step_ms": 0.19694200000230921
+    },
+    {
+      "step": 369,
+      "H_kernel_ms": 0.020824000330321724,
+      "Ez_kernel_ms": 0.020460000087041408,
+      "energy_memset_ms": 0.016709999727027025,
+      "energy_kernel_ms": 0.11825599995063385,
+      "energy_d2h_ms": 0.02120199997079908,
+      "is_snapshot": false,
+      "total_step_ms": 0.19745200006582309
+    },
+    {
+      "step": 370,
+      "H_kernel_ms": 0.019007999981113244,
+      "Ez_kernel_ms": 0.019350999991729623,
+      "energy_memset_ms": 0.016212999980780296,
+      "energy_kernel_ms": 0.11781300008806284,
+      "energy_d2h_ms": 0.02092299973810441,
+      "is_snapshot": false,
+      "total_step_ms": 0.1933079997797904
+    },
+    {
+      "step": 371,
+      "H_kernel_ms": 0.018427999748382717,
+      "Ez_kernel_ms": 0.019160999727318995,
+      "energy_memset_ms": 0.01551000013932935,
+      "energy_kernel_ms": 0.11809599982370855,
+      "energy_d2h_ms": 0.020712000150524545,
+      "is_snapshot": false,
+      "total_step_ms": 0.19190699958926416
+    },
+    {
+      "step": 372,
+      "H_kernel_ms": 0.01901599989651004,
+      "Ez_kernel_ms": 0.019643000086944085,
+      "energy_memset_ms": 0.03440899990891921,
+      "energy_kernel_ms": 0.12046200026816223,
+      "energy_d2h_ms": 0.02451799991831649,
+      "is_snapshot": false,
+      "total_step_ms": 0.21804800007885206
+    },
+    {
+      "step": 373,
+      "H_kernel_ms": 0.019004000023414847,
+      "Ez_kernel_ms": 0.019964999864896527,
+      "energy_memset_ms": 0.01704399983282201,
+      "energy_kernel_ms": 0.11814399977083667,
+      "energy_d2h_ms": 0.022450999949796824,
+      "is_snapshot": false,
+      "total_step_ms": 0.19660799944176688
+    },
+    {
+      "step": 374,
+      "H_kernel_ms": 0.018864000139728887,
+      "Ez_kernel_ms": 0.019366999822523212,
+      "energy_memset_ms": 0.01660899988564779,
+      "energy_kernel_ms": 0.11785700007749256,
+      "energy_d2h_ms": 0.020932000097673154,
+      "is_snapshot": false,
+      "total_step_ms": 0.1936290000230656
+    },
+    {
+      "step": 375,
+      "H_kernel_ms": 0.018450999959895853,
+      "Ez_kernel_ms": 0.01979099988602684,
+      "energy_memset_ms": 0.015468000128748827,
+      "energy_kernel_ms": 0.11788399979195674,
+      "energy_d2h_ms": 0.02084400011881371,
+      "is_snapshot": false,
+      "total_step_ms": 0.19243799988544197
+    },
+    {
+      "step": 376,
+      "H_kernel_ms": 0.02562300005592988,
+      "Ez_kernel_ms": 0.019406000319577288,
+      "energy_memset_ms": 0.015308999991248129,
+      "energy_kernel_ms": 0.11696399997163098,
+      "energy_d2h_ms": 0.020925000171700958,
+      "is_snapshot": false,
+      "total_step_ms": 0.19822700051008724
+    },
+    {
+      "step": 377,
+      "H_kernel_ms": 0.019875999896612484,
+      "Ez_kernel_ms": 0.020371000118757365,
+      "energy_memset_ms": 0.01687200028754887,
+      "energy_kernel_ms": 0.11775400025726412,
+      "energy_d2h_ms": 0.023275000330613693,
+      "is_snapshot": false,
+      "total_step_ms": 0.19814800089079654
+    },
+    {
+      "step": 378,
+      "H_kernel_ms": 0.01899700009744265,
+      "Ez_kernel_ms": 0.027414999749453273,
+      "energy_memset_ms": 0.01656499989621807,
+      "energy_kernel_ms": 0.11792600025728461,
+      "energy_d2h_ms": 0.022236999939195812,
+      "is_snapshot": false,
+      "total_step_ms": 0.20313999993959442
+    },
+    {
+      "step": 379,
+      "H_kernel_ms": 0.019204000182071468,
+      "Ez_kernel_ms": 0.01957600034074858,
+      "energy_memset_ms": 0.015620999874954578,
+      "energy_kernel_ms": 0.11771399977078545,
+      "energy_d2h_ms": 0.02123000012943521,
+      "is_snapshot": false,
+      "total_step_ms": 0.19334500029799528
+    },
+    {
+      "step": 380,
+      "H_kernel_ms": 0.01878000011856784,
+      "Ez_kernel_ms": 0.019396999960008543,
+      "energy_memset_ms": 0.015577999874949455,
+      "energy_kernel_ms": 0.11753199987651897,
+      "energy_d2h_ms": 0.02126400022461894,
+      "is_snapshot": false,
+      "total_step_ms": 0.19255100005466375
+    },
+    {
+      "step": 381,
+      "H_kernel_ms": 0.01822100011850125,
+      "Ez_kernel_ms": 0.01952799993887311,
+      "energy_memset_ms": 0.015487999917240813,
+      "energy_kernel_ms": 0.11784700018324656,
+      "energy_d2h_ms": 0.022709999939252157,
+      "is_snapshot": false,
+      "total_step_ms": 0.1937940000971139
+    },
+    {
+      "step": 382,
+      "H_kernel_ms": 0.019939000139856944,
+      "Ez_kernel_ms": 0.026448999960848596,
+      "energy_memset_ms": 0.01725999982227222,
+      "energy_kernel_ms": 0.11792599980253726,
+      "energy_d2h_ms": 0.028356999791867565,
+      "is_snapshot": false,
+      "total_step_ms": 0.2099309995173826
+    },
+    {
+      "step": 383,
+      "H_kernel_ms": 0.019265999981143977,
+      "Ez_kernel_ms": 0.019731000065803528,
+      "energy_memset_ms": 0.01619300019228831,
+      "energy_kernel_ms": 0.12019899986626115,
+      "energy_d2h_ms": 0.021112000013090437,
+      "is_snapshot": false,
+      "total_step_ms": 0.1965010001185874
+    },
+    {
+      "step": 384,
+      "H_kernel_ms": 0.021672999992006226,
+      "Ez_kernel_ms": 0.022466000245913165,
+      "energy_memset_ms": 0.016148999748111237,
+      "energy_kernel_ms": 0.11782599995058263,
+      "energy_d2h_ms": 0.021055000161140924,
+      "is_snapshot": false,
+      "total_step_ms": 0.19916900009775418
+    },
+    {
+      "step": 385,
+      "H_kernel_ms": 0.018552999790699687,
+      "Ez_kernel_ms": 0.019692000023496803,
+      "energy_memset_ms": 0.015305000033549732,
+      "energy_kernel_ms": 0.11764100008804235,
+      "energy_d2h_ms": 0.02073299992844113,
+      "is_snapshot": false,
+      "total_step_ms": 0.1919239998642297
+    },
+    {
+      "step": 386,
+      "H_kernel_ms": 0.018787000044540036,
+      "Ez_kernel_ms": 0.019134000012854813,
+      "energy_memset_ms": 0.015227999938360881,
+      "energy_kernel_ms": 0.11799499998232932,
+      "energy_d2h_ms": 0.022509000245918287,
+      "is_snapshot": false,
+      "total_step_ms": 0.19365300022400334
+    },
+    {
+      "step": 387,
+      "H_kernel_ms": 0.01958799975909642,
+      "Ez_kernel_ms": 0.01964999955816893,
+      "energy_memset_ms": 0.016836999748193193,
+      "energy_kernel_ms": 0.11775599978136597,
+      "energy_d2h_ms": 0.02172999984395574,
+      "is_snapshot": false,
+      "total_step_ms": 0.19556099869078025
+    },
+    {
+      "step": 388,
+      "H_kernel_ms": 0.019146999875374604,
+      "Ez_kernel_ms": 0.02041000016106409,
+      "energy_memset_ms": 0.0162090000230819,
+      "energy_kernel_ms": 0.11805399981312803,
+      "energy_d2h_ms": 0.02168199989682762,
+      "is_snapshot": false,
+      "total_step_ms": 0.19550199976947624
+    },
+    {
+      "step": 389,
+      "H_kernel_ms": 0.019348000023455825,
+      "Ez_kernel_ms": 0.019694000002346,
+      "energy_memset_ms": 0.016342999970220262,
+      "energy_kernel_ms": 0.11783999980252702,
+      "energy_d2h_ms": 0.020870999833277892,
+      "is_snapshot": false,
+      "total_step_ms": 0.194095999631827
+    },
+    {
+      "step": 390,
+      "H_kernel_ms": 0.018295000245416304,
+      "Ez_kernel_ms": 0.019891000192728825,
+      "energy_memset_ms": 0.015985999652912142,
+      "energy_kernel_ms": 0.11757800029954524,
+      "energy_d2h_ms": 0.0206260001505143,
+      "is_snapshot": false,
+      "total_step_ms": 0.1923760005411168
+    },
+    {
+      "step": 391,
+      "H_kernel_ms": 0.018174000160797732,
+      "Ez_kernel_ms": 0.019718000203283736,
+      "energy_memset_ms": 0.015327999790315516,
+      "energy_kernel_ms": 0.13207200026954524,
+      "energy_d2h_ms": 0.022507999801746337,
+      "is_snapshot": false,
+      "total_step_ms": 0.20780000022568856
+    },
+    {
+      "step": 392,
+      "H_kernel_ms": 0.019238000277255196,
+      "Ez_kernel_ms": 0.019969000277342275,
+      "energy_memset_ms": 0.016328000128851272,
+      "energy_kernel_ms": 0.11861300026794197,
+      "energy_d2h_ms": 0.021535000087169465,
+      "is_snapshot": false,
+      "total_step_ms": 0.19568300103856018
+    },
+    {
+      "step": 393,
+      "H_kernel_ms": 0.01982200001293677,
+      "Ez_kernel_ms": 0.020367000161058968,
+      "energy_memset_ms": 0.015937000171106774,
+      "energy_kernel_ms": 0.11797799970736378,
+      "energy_d2h_ms": 0.020760000097652664,
+      "is_snapshot": false,
+      "total_step_ms": 0.19486400015011895
+    },
+    {
+      "step": 394,
+      "H_kernel_ms": 0.018988000192621257,
+      "Ez_kernel_ms": 0.01983299989660736,
+      "energy_memset_ms": 0.015450999853783287,
+      "energy_kernel_ms": 0.11773000005632639,
+      "energy_d2h_ms": 0.02079799969578744,
+      "is_snapshot": false,
+      "total_step_ms": 0.19279999969512573
+    },
+    {
+      "step": 395,
+      "H_kernel_ms": 0.018401000033918535,
+      "Ez_kernel_ms": 0.01997500021388987,
+      "energy_memset_ms": 0.01528999973743339,
+      "energy_kernel_ms": 0.11722299996108632,
+      "energy_d2h_ms": 0.02043899985437747,
+      "is_snapshot": false,
+      "total_step_ms": 0.19132799980070558
+    },
+    {
+      "step": 396,
+      "H_kernel_ms": 0.018825000097422162,
+      "Ez_kernel_ms": 0.0418780000472907,
+      "energy_memset_ms": 0.015816000086488202,
+      "energy_kernel_ms": 0.11774399990827078,
+      "energy_d2h_ms": 0.02150999989680713,
+      "is_snapshot": false,
+      "total_step_ms": 0.21577300003627897
+    },
+    {
+      "step": 397,
+      "H_kernel_ms": 0.018123999780073063,
+      "Ez_kernel_ms": 0.01942000017152168,
+      "energy_memset_ms": 0.021993999780534068,
+      "energy_kernel_ms": 0.11760000006688642,
+      "energy_d2h_ms": 0.022220000118977623,
+      "is_snapshot": false,
+      "total_step_ms": 0.19935799991799286
+    },
+    {
+      "step": 398,
+      "H_kernel_ms": 0.01888699989649467,
+      "Ez_kernel_ms": 0.01957199992830283,
+      "energy_memset_ms": 0.015351999991253251,
+      "energy_kernel_ms": 0.11787699986598454,
+      "energy_d2h_ms": 0.02034799990724423,
+      "is_snapshot": false,
+      "total_step_ms": 0.19203599958927953
+    },
+    {
+      "step": 399,
+      "H_kernel_ms": 0.018882999938796274,
+      "Ez_kernel_ms": 0.019007999981113244,
+      "energy_memset_ms": 0.015303999589377781,
+      "energy_kernel_ms": 0.11713100002452848,
+      "energy_d2h_ms": 0.01998900006583426,
+      "snapshot_d2h_ms": 0.1588240002092789,
+      "is_snapshot": true,
+      "total_step_ms": 0.34913899980892893
+    }
+  ],
+  "aggregate": {
+    "H_kernel_ms": {
+      "mean": 0.023273027575060792,
+      "median": 0.019285999769635964,
+      "min": 0.017963000118470518,
+      "max": 0.3507450001052348,
+      "stdev": 0.020177774460549875
+    },
+    "Ez_kernel_ms": {
+      "mean": 0.023159588962149417,
+      "median": 0.019937999695684994,
+      "min": 0.018709999949351186,
+      "max": 0.19046699981117854,
+      "stdev": 0.01367011289119948
+    },
+    "energy_memset_ms": {
+      "mean": 0.019210165413012664,
+      "median": 0.016529000276932493,
+      "min": 0.014905999705661088,
+      "max": 0.06525700018755742,
+      "stdev": 0.00710769948035978
+    },
+    "energy_kernel_ms": {
+      "mean": 0.12087559399130389,
+      "median": 0.1181749998977466,
+      "min": 0.11673800008793478,
+      "max": 0.21013700006733416,
+      "stdev": 0.009019160137627907
+    },
+    "energy_d2h_ms": {
+      "mean": 0.028517403515614655,
+      "median": 0.022450999949796824,
+      "min": 0.01998900006583426,
+      "max": 0.6220010000106413,
+      "stdev": 0.032736110434623045
+    },
+    "total_step_ms": {
+      "mean": 0.2184079975014632,
+      "median": 0.19785700078500668,
+      "min": 0.1896650005619449,
+      "max": 0.8606430001236731,
+      "stdev": 0.05835231011712254
+    },
+    "snapshot_d2h_ms": {
+      "mean": 0.1345514999684383,
+      "median": 0.12425399995663611,
+      "min": 0.11525699983394588,
+      "max": 0.18117999979949673,
+      "stdev": 0.021661724488847966
+    }
+  }
+}

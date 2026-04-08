@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FDTD Electromagnetic Solver — 2D TM Mode</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, #root { height: 100%; width: 100%; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0a0e17; color: #e2e8f0; }
+  input[type="range"] { -webkit-appearance: none; appearance: none; background: rgba(255,255,255,0.08); border-radius: 2px; outline: none; height: 4px; width: 100%; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: #00d2d3; cursor: pointer; box-shadow: 0 0 6px rgba(0,210,211,0.4); }
+  input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: #00d2d3; cursor: pointer; border: none; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+  button { font-family: 'JetBrains Mono', monospace; }
+  button:hover { filter: brightness(1.15); }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useRef, useCallback, useEffect } = React;
+
+// ─── Physical constants ───
+const C0 = 3.0e8;
+const MU0 = 4.0e-7 * Math.PI;
+const EPS0 = 1.0 / (MU0 * C0 * C0);
+
+// ─── Color maps ───
+function rdbu(v) {
+  const t = Math.max(0, Math.min(1, (v + 1) / 2));
+  if (t < 0.5) { const s = t * 2; return [Math.round(59 + s * 187), Math.round(76 + s * 148), Math.round(192 + s * 63)]; }
+  else { const s = (t - 0.5) * 2; return [Math.round(246 - s * 68), Math.round(224 - s * 190), Math.round(255 - s * 218)]; }
+}
+function puor(v) {
+  const t = Math.max(0, Math.min(1, (v + 1) / 2));
+  if (t < 0.5) { const s = t * 2; return [Math.round(84 + s * 160), Math.round(39 + s * 166), Math.round(136 + s * 100)]; }
+  else { const s = (t - 0.5) * 2; return [Math.round(244 - s * 14), Math.round(205 - s * 73), Math.round(236 - s * 210)]; }
+}
+function piyg(v) {
+  const t = Math.max(0, Math.min(1, (v + 1) / 2));
+  if (t < 0.5) { const s = t * 2; return [Math.round(197 + s * 50), Math.round(27 + s * 196), Math.round(138 + s * 85)]; }
+  else { const s = (t - 0.5) * 2; return [Math.round(247 - s * 120), Math.round(223 - s * 33), Math.round(223 - s * 152)]; }
+}
+function inferno(v) {
+  const t = Math.max(0, Math.min(1, v));
+  if (t < 0.25) { const s = t * 4; return [Math.round(s * 87), Math.round(s * 16), Math.round(4 + s * 106)]; }
+  else if (t < 0.5) { const s = (t - 0.25) * 4; return [Math.round(87 + s * 100), Math.round(16 + s * 30), Math.round(110 - s * 30)]; }
+  else if (t < 0.75) { const s = (t - 0.5) * 4; return [Math.round(187 + s * 60), Math.round(46 + s * 114), Math.round(80 - s * 65)]; }
+  else { const s = (t - 0.75) * 4; return [Math.round(247 + s * 5), Math.round(160 + s * 80), Math.round(15 + s * 60)]; }
+}
+
+// ─── FDTD Engine ───
+class FDTDEngine {
+  constructor(params) {
+    this.Nx = params.gridSize; this.Ny = params.gridSize;
+    this.dx = params.cellSize; this.dy = params.cellSize;
+    this.courant = params.courant;
+    this.dt = this.courant / (C0 * Math.sqrt(1.0 / (this.dx * this.dx) + 1.0 / (this.dy * this.dy)));
+    this.srcX = Math.floor(params.srcX * this.Nx);
+    this.srcY = Math.floor(params.srcY * this.Ny);
+    this.spread = params.pulseWidth * this.dt;
+    this.t0 = 3.0 * this.spread;
+    this.coeffHx = this.dt / (MU0 * this.dy);
+    this.coeffHy = this.dt / (MU0 * this.dx);
+    this.coeffEz = this.dt / EPS0;
+    this.Ez = new Float64Array(this.Nx * this.Ny);
+    this.Hx = new Float64Array(this.Nx * this.Ny);
+    this.Hy = new Float64Array(this.Nx * this.Ny);
+    this.step = 0; this.time = 0;
+    this.energyHistory = []; this.timeHistory = [];
+  }
+  idx(i, j) { return i * this.Ny + j; }
+  advance() {
+    const { Nx, Ny, Ez, Hx, Hy, coeffHx, coeffHy, coeffEz, dx, dy } = this;
+    for (let i = 0; i < Nx; i++) for (let j = 0; j < Ny - 1; j++) Hx[this.idx(i, j)] -= coeffHx * (Ez[this.idx(i, j + 1)] - Ez[this.idx(i, j)]);
+    for (let i = 0; i < Nx - 1; i++) for (let j = 0; j < Ny; j++) Hy[this.idx(i, j)] += coeffHy * (Ez[this.idx(i + 1, j)] - Ez[this.idx(i, j)]);
+    for (let i = 1; i < Nx; i++) for (let j = 1; j < Ny; j++)
+      Ez[this.idx(i, j)] += coeffEz * ((Hy[this.idx(i, j)] - Hy[this.idx(i - 1, j)]) / dx - (Hx[this.idx(i, j)] - Hx[this.idx(i, j - 1)]) / dy);
+    const t = this.step * this.dt;
+    const arg = (t - this.t0) / this.spread;
+    Ez[this.idx(this.srcX, this.srcY)] = Math.exp(-(arg * arg));
+    for (let j = 0; j < Ny; j++) { Ez[this.idx(0, j)] = 0; Ez[this.idx(Nx - 1, j)] = 0; }
+    for (let i = 0; i < Nx; i++) { Ez[this.idx(i, 0)] = 0; Ez[this.idx(i, Ny - 1)] = 0; }
+    let UE = 0, UH = 0;
+    for (let k = 0; k < Nx * Ny; k++) { UE += Ez[k] * Ez[k]; UH += Hx[k] * Hx[k] + Hy[k] * Hy[k]; }
+    UE *= 0.5 * EPS0 * dx * dy; UH *= 0.5 * MU0 * dx * dy;
+    const totalEnergy = UE + UH;
+    this.energyHistory.push(totalEnergy); this.timeHistory.push(t * 1e9);
+    this.step++; this.time = t;
+    return { totalEnergy, UE, UH };
+  }
+  getFieldStats() {
+    let maxEz = 0, maxHx = 0, maxHy = 0;
+    for (let k = 0; k < this.Nx * this.Ny; k++) {
+      const ae = Math.abs(this.Ez[k]), ax = Math.abs(this.Hx[k]), ay = Math.abs(this.Hy[k]);
+      if (ae > maxEz) maxEz = ae; if (ax > maxHx) maxHx = ax; if (ay > maxHy) maxHy = ay;
+    }
+    return { maxEz: Math.max(1e-10, maxEz), maxHx: Math.max(1e-10, maxHx), maxHy: Math.max(1e-10, maxHy) };
+  }
+}
+
+// ─── Field Canvas ───
+function FieldCanvas({ engine, fieldType, label, canvasSize }) {
+  const canvasRef = useRef(null);
+  const imgRef = useRef(null);
+  useEffect(() => {
+    if (!canvasRef.current || !engine) return;
+    const ctx = canvasRef.current.getContext("2d");
+    const N = engine.Nx;
+    if (!imgRef.current || imgRef.current.width !== N) imgRef.current = ctx.createImageData(N, N);
+    const imgData = imgRef.current;
+    const stats = engine.getFieldStats();
+    const d = imgData.data;
+    if (fieldType === "hmag") {
+      let maxH = 0;
+      for (let k = 0; k < N * N; k++) { const m = Math.sqrt(engine.Hx[k] * engine.Hx[k] + engine.Hy[k] * engine.Hy[k]); if (m > maxH) maxH = m; }
+      maxH = Math.max(1e-10, maxH);
+      for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+        const k = i * N + j, p = ((N - 1 - j) * N + i) * 4;
+        const m = Math.sqrt(engine.Hx[k] * engine.Hx[k] + engine.Hy[k] * engine.Hy[k]);
+        const [r, g, b] = inferno(m / maxH);
+        d[p] = r; d[p+1] = g; d[p+2] = b; d[p+3] = 255;
+      }
+    } else {
+      let field, vmax, cmapFn;
+      if (fieldType === "ez") { field = engine.Ez; vmax = stats.maxEz; cmapFn = rdbu; }
+      else if (fieldType === "hx") { field = engine.Hx; vmax = stats.maxHx; cmapFn = puor; }
+      else { field = engine.Hy; vmax = stats.maxHy; cmapFn = piyg; }
+      for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+        const k = i * N + j, p = ((N - 1 - j) * N + i) * 4, v = field[k] / vmax;
+        const [r, g, b] = cmapFn(v);
+        d[p] = r; d[p+1] = g; d[p+2] = b; d[p+3] = 255;
+      }
+    }
+    ctx.putImageData(imgData, 0, 0);
+    // Quiver arrows for |H|
+    if (fieldType === "hmag") {
+      const qstep = Math.max(6, Math.floor(N / 16));
+      let maxH = 0;
+      for (let k = 0; k < N * N; k++) { const m = Math.sqrt(engine.Hx[k] * engine.Hx[k] + engine.Hy[k] * engine.Hy[k]); if (m > maxH) maxH = m; }
+      if (maxH > 1e-15) {
+        ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 1;
+        const al = qstep * 0.45;
+        for (let i = Math.floor(qstep / 2); i < N; i += qstep)
+          for (let j = Math.floor(qstep / 2); j < N; j += qstep) {
+            const k = i * N + j, hx = engine.Hx[k], hy = engine.Hy[k];
+            const m = Math.sqrt(hx * hx + hy * hy);
+            if (m < maxH * 0.03) continue;
+            const px = i, py = N - 1 - j, ddx = (hx / m) * al, ddy = -(hy / m) * al;
+            ctx.beginPath(); ctx.moveTo(px - ddx/2, py - ddy/2); ctx.lineTo(px + ddx/2, py + ddy/2); ctx.stroke();
+            const ang = Math.atan2(ddy, ddx), hl = 3;
+            ctx.beginPath();
+            ctx.moveTo(px + ddx/2, py + ddy/2); ctx.lineTo(px + ddx/2 - hl*Math.cos(ang-0.5), py + ddy/2 - hl*Math.sin(ang-0.5));
+            ctx.moveTo(px + ddx/2, py + ddy/2); ctx.lineTo(px + ddx/2 - hl*Math.cos(ang+0.5), py + ddy/2 - hl*Math.sin(ang+0.5));
+            ctx.stroke();
+          }
+      }
+    }
+    // Source marker
+    const sx = engine.srcX, sy = N - 1 - engine.srcY;
+    ctx.strokeStyle = fieldType === "hmag" ? "#fff" : "#000"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(sx-4,sy); ctx.lineTo(sx+4,sy); ctx.moveTo(sx,sy-4); ctx.lineTo(sx,sy+4); ctx.stroke();
+  });
+  return React.createElement("div", { style: { display:"flex", flexDirection:"column", alignItems:"center", gap:4 } },
+    React.createElement("span", { style: { fontSize:11, fontWeight:600, color:"#c8d6e5", letterSpacing:"0.05em", fontFamily:"'JetBrains Mono', monospace" } }, label),
+    React.createElement("canvas", {
+      ref: canvasRef, width: engine?.Nx||100, height: engine?.Ny||100,
+      style: { width:canvasSize, height:canvasSize, imageRendering:"pixelated", borderRadius:4, border:"1px solid rgba(255,255,255,0.08)" }
+    })
+  );
+}
+
+// ─── Energy Plot ───
+function EnergyPlot({ engine, width, height }) {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    if (!canvasRef.current || !engine || engine.energyHistory.length < 2) return;
+    const ctx = canvasRef.current.getContext("2d");
+    ctx.clearRect(0, 0, width, height);
+    const pad = { l:56, r:12, t:8, b:28 }, pw = width-pad.l-pad.r, ph = height-pad.t-pad.b;
+    const times = engine.timeHistory, energies = engine.energyHistory;
+    const maxT = Math.max(times[times.length-1], 0.01);
+    let maxE = 0; for (let i = 0; i < energies.length; i++) if (energies[i] > maxE) maxE = energies[i];
+    maxE = (maxE || 1e-15) * 1.1;
+    ctx.strokeStyle = "rgba(255,255,255,0.06)"; ctx.lineWidth = 0.5;
+    for (let i = 0; i <= 4; i++) { const y = pad.t + (ph*i)/4; ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+pw,y); ctx.stroke(); }
+    ctx.fillStyle = "#7f8c9b"; ctx.font = "9px 'JetBrains Mono', monospace"; ctx.textAlign = "right";
+    for (let i = 0; i <= 4; i++) { const y = pad.t + (ph*i)/4; ctx.fillText((maxE*(1-i/4)).toExponential(1), pad.l-4, y+3); }
+    ctx.textAlign = "center"; ctx.fillText("Time [ns]", pad.l+pw/2, height-2);
+    const sourceOff = (engine.t0 + 3*engine.spread) * 1e9;
+    const soX = pad.l + (sourceOff/maxT)*pw;
+    if (soX > pad.l && soX < pad.l+pw) {
+      ctx.strokeStyle = "rgba(255,255,255,0.15)"; ctx.setLineDash([4,3]);
+      ctx.beginPath(); ctx.moveTo(soX, pad.t); ctx.lineTo(soX, pad.t+ph); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = "#7f8c9b"; ctx.font = "8px monospace"; ctx.fillText("src off", soX, pad.t+ph+12);
+    }
+    ctx.strokeStyle = "#00d2d3"; ctx.lineWidth = 1.5; ctx.beginPath();
+    for (let i = 0; i < times.length; i++) {
+      const x = pad.l + (times[i]/maxT)*pw, y = pad.t + ph - (energies[i]/maxE)*ph;
+      if (i === 0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    ctx.strokeStyle = "rgba(0,210,211,0.25)"; ctx.lineWidth = 4; ctx.beginPath();
+    for (let i = 0; i < times.length; i++) {
+      const x = pad.l + (times[i]/maxT)*pw, y = pad.t + ph - (energies[i]/maxE)*ph;
+      if (i === 0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+  });
+  return React.createElement("canvas", { ref:canvasRef, width, height, style:{ width, height, borderRadius:4 } });
+}
+
+// ─── Slider ───
+function ParamSlider({ label, value, min, max, step, onChange, unit, formatVal }) {
+  return React.createElement("div", { style: { display:"flex", flexDirection:"column", gap:2 } },
+    React.createElement("div", { style: { display:"flex", justifyContent:"space-between", alignItems:"baseline" } },
+      React.createElement("label", { style: { fontSize:10, color:"#8395a7", fontFamily:"'JetBrains Mono', monospace", textTransform:"uppercase", letterSpacing:"0.08em" } }, label),
+      React.createElement("span", { style: { fontSize:11, color:"#00d2d3", fontFamily:"'JetBrains Mono', monospace", fontWeight:600 } }, (formatVal ? formatVal(value) : value) + (unit || ""))
+    ),
+    React.createElement("input", { type:"range", min, max, step, value, onChange: e => onChange(parseFloat(e.target.value)), style: { width:"100%" } })
+  );
+}
+
+// ─── Main App ───
+function FDTDApp() {
+  const [gridSize, setGridSize] = useState(100);
+  const [courant, setCourant] = useState(0.99);
+  const [pulseWidth, setPulseWidth] = useState(12);
+  const [srcXFrac, setSrcXFrac] = useState(0.5);
+  const [srcYFrac, setSrcYFrac] = useState(0.5);
+  const [cellSizeUm, setCellSizeUm] = useState(1000);
+  const [stepsPerFrame, setStepsPerFrame] = useState(2);
+  const [running, setRunning] = useState(false);
+  const [activeField, setActiveField] = useState("all");
+  const [, setTick] = useState(0);
+  const engineRef = useRef(null);
+  const animRef = useRef(null);
+  const statsRef = useRef({ totalEnergy:0, UE:0, UH:0 });
+
+  const initEngine = useCallback(() => {
+    if (animRef.current) cancelAnimationFrame(animRef.current);
+    setRunning(false);
+    engineRef.current = new FDTDEngine({ gridSize, cellSize: cellSizeUm*1e-6, courant, pulseWidth, srcX:srcXFrac, srcY:srcYFrac });
+    statsRef.current = { totalEnergy:0, UE:0, UH:0 };
+    setTick(t => t+1);
+  }, [gridSize, courant, pulseWidth, srcXFrac, srcYFrac, cellSizeUm]);
+
+  useEffect(() => { initEngine(); }, []);
+
+  const doStep = useCallback(() => {
+    if (!engineRef.current) return;
+    for (let i = 0; i < stepsPerFrame; i++) statsRef.current = engineRef.current.advance();
+    setTick(t => t+1);
+  }, [stepsPerFrame]);
+
+  const animate = useCallback(() => { doStep(); animRef.current = requestAnimationFrame(animate); }, [doStep]);
+
+  useEffect(() => {
+    if (running) animRef.current = requestAnimationFrame(animate);
+    else if (animRef.current) cancelAnimationFrame(animRef.current);
+    return () => { if (animRef.current) cancelAnimationFrame(animRef.current); };
+  }, [running, animate]);
+
+  const engine = engineRef.current;
+  const stats = statsRef.current;
+  const canvasSize = activeField === "all" ? 220 : 420;
+
+  const h = React.createElement;
+
+  // ── View mode buttons ──
+  const viewModes = [
+    { key:"all", label:"2×2 Panel" }, { key:"ez", label:"Ez only" },
+    { key:"hx", label:"Hx only" }, { key:"hy", label:"Hy only" }
+  ];
+
+  // ── Info cards data ──
+  const cards = [
+    { icon:"🔴🔵", title:"E_z Field", desc:"Electric field (out-of-plane). Red = positive, Blue = negative." },
+    { icon:"🟣🟠", title:"H_x Field", desc:"Magnetic x-component. Staggered at half-grid offset in y." },
+    { icon:"🟢🩷", title:"H_y Field", desc:"Magnetic y-component. Staggered at half-grid offset in x." },
+    { icon:"🔥", title:"|H| + Arrows", desc:"Magnetic magnitude with quiver arrows showing circulation." }
+  ];
+
+  const liveStats = engine ? [
+    ["Step", engine.step], ["Time", (engine.time*1e9).toFixed(3)+" ns"],
+    ["Δt", engine.dt.toExponential(2)+" s"], ["Energy", stats.totalEnergy.toExponential(3)+" J"]
+  ] : [];
+
+  const mono = "'JetBrains Mono', 'Fira Code', monospace";
+  const sectionHead = { fontSize:9, color:"#64748b", fontFamily:mono, textTransform:"uppercase", letterSpacing:"0.12em", marginBottom:10 };
+
+  return h("div", { style: { minHeight:"100vh", background:"linear-gradient(165deg, #0a0e17 0%, #111827 40%, #0d1520 100%)", color:"#e2e8f0", fontFamily:"'Inter', sans-serif", display:"flex", flexDirection:"column" } },
+    // Header
+    h("header", { style: { padding:"18px 28px 14px", borderBottom:"1px solid rgba(255,255,255,0.05)", background:"rgba(0,0,0,0.2)" } },
+      h("div", { style: { display:"flex", alignItems:"center", gap:14 } },
+        h("div", { style: { width:36, height:36, borderRadius:8, background:"linear-gradient(135deg,#00d2d3,#0abde3)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, fontWeight:700, color:"#0a0e17", boxShadow:"0 0 20px rgba(0,210,211,0.3)" } }, "⚡"),
+        h("div", null,
+          h("h1", { style: { margin:0, fontSize:18, fontWeight:700, letterSpacing:"-0.02em", color:"#f1f5f9" } }, "FDTD Electromagnetic Solver"),
+          h("p", { style: { margin:0, fontSize:11, color:"#64748b", fontFamily:mono, letterSpacing:"0.04em" } }, "2D TM-Mode · Yee Algorithm · PEC Cavity")
+        )
+      )
+    ),
+    h("div", { style: { display:"flex", flex:1, minHeight:0 } },
+      // Sidebar
+      h("aside", { style: { width:260, minWidth:260, padding:"16px", borderRight:"1px solid rgba(255,255,255,0.05)", background:"rgba(0,0,0,0.15)", display:"flex", flexDirection:"column", gap:14, overflowY:"auto", maxHeight:"calc(100vh - 70px)", position:"sticky", top:0 } },
+        // Run/Pause/Step
+        h("div", { style: { display:"flex", gap:6 } },
+          h("button", { onClick: () => setRunning(!running), style: { flex:1, padding:"8px 0", border:"none", borderRadius:6, cursor:"pointer", background:running?"rgba(239,68,68,0.15)":"rgba(0,210,211,0.15)", color:running?"#f87171":"#00d2d3", fontSize:11, fontWeight:600, letterSpacing:"0.06em" } }, running ? "⏸ PAUSE" : "▶ RUN"),
+          h("button", { onClick:doStep, disabled:running, style: { padding:"8px 12px", border:"none", borderRadius:6, cursor:"pointer", background:"rgba(255,255,255,0.06)", color:"#94a3b8", fontSize:11, opacity:running?0.4:1 } }, "STEP")
+        ),
+        h("button", { onClick:initEngine, style: { padding:"7px 0", border:"1px solid rgba(255,255,255,0.08)", borderRadius:6, cursor:"pointer", background:"transparent", color:"#94a3b8", fontSize:10, letterSpacing:"0.06em" } }, "↺ RESET WITH NEW PARAMS"),
+        // Grid params
+        h("div", { style: { borderTop:"1px solid rgba(255,255,255,0.06)", paddingTop:12 } },
+          h("div", { style: sectionHead }, "Grid Parameters"),
+          h("div", { style: { display:"flex", flexDirection:"column", gap:10 } },
+            h(ParamSlider, { label:"Grid Size", value:gridSize, min:40, max:200, step:10, onChange:setGridSize, unit:"²", formatVal: v => v+"×"+v }),
+            h(ParamSlider, { label:"Cell Size", value:cellSizeUm, min:100, max:5000, step:100, onChange:setCellSizeUm, unit:" µm" }),
+            h(ParamSlider, { label:"Courant #", value:courant, min:0.5, max:0.99, step:0.01, onChange:setCourant })
+          )
+        ),
+        // Source params
+        h("div", { style: { borderTop:"1px solid rgba(255,255,255,0.06)", paddingTop:12 } },
+          h("div", { style: sectionHead }, "Source Parameters"),
+          h("div", { style: { display:"flex", flexDirection:"column", gap:10 } },
+            h(ParamSlider, { label:"Pulse Width", value:pulseWidth, min:4, max:30, step:1, onChange:setPulseWidth, unit:" Δt" }),
+            h(ParamSlider, { label:"Source X", value:srcXFrac, min:0.1, max:0.9, step:0.05, onChange:setSrcXFrac, formatVal: v => (v*100).toFixed(0), unit:"%" }),
+            h(ParamSlider, { label:"Source Y", value:srcYFrac, min:0.1, max:0.9, step:0.05, onChange:setSrcYFrac, formatVal: v => (v*100).toFixed(0), unit:"%" })
+          )
+        ),
+        // Display
+        h("div", { style: { borderTop:"1px solid rgba(255,255,255,0.06)", paddingTop:12 } },
+          h("div", { style: sectionHead }, "Display"),
+          h(ParamSlider, { label:"Steps/Frame", value:stepsPerFrame, min:1, max:8, step:1, onChange:setStepsPerFrame }),
+          h("div", { style: { marginTop:10 } },
+            h("div", { style: { fontSize:10, color:"#8395a7", fontFamily:mono, marginBottom:6 } }, "VIEW MODE"),
+            h("div", { style: { display:"grid", gridTemplateColumns:"1fr 1fr", gap:4 } },
+              viewModes.map(({ key, label }) =>
+                h("button", { key, onClick: () => setActiveField(key), style: { padding:"5px 0", border:"none", borderRadius:4, cursor:"pointer", background: activeField===key?"rgba(0,210,211,0.15)":"rgba(255,255,255,0.04)", color: activeField===key?"#00d2d3":"#64748b", fontSize:10, transition:"all 0.15s" } }, label)
+              )
+            )
+          )
+        ),
+        // Live Stats
+        engine && h("div", { style: { marginTop:"auto", padding:10, borderRadius:6, background:"rgba(0,0,0,0.2)", border:"1px solid rgba(255,255,255,0.04)" } },
+          h("div", { style: sectionHead }, "Live Stats"),
+          liveStats.map(([k,v]) =>
+            h("div", { key:k, style: { display:"flex", justifyContent:"space-between", padding:"2px 0" } },
+              h("span", { style: { fontSize:10, color:"#64748b", fontFamily:mono } }, k),
+              h("span", { style: { fontSize:10, color:"#c8d6e5", fontFamily:mono } }, v)
+            )
+          )
+        )
+      ),
+      // Main viz
+      h("main", { style: { flex:1, padding:20, display:"flex", flexDirection:"column", alignItems:"center", gap:16, minWidth:0 } },
+        // Status bar
+        engine && h("div", { style: { display:"flex", gap:20, alignItems:"center", padding:"8px 20px", borderRadius:8, background:"rgba(0,0,0,0.25)", border:"1px solid rgba(255,255,255,0.04)" } },
+          h("div", { style: { width:8, height:8, borderRadius:"50%", background:running?"#22c55e":"#64748b", boxShadow:running?"0 0 8px rgba(34,197,94,0.5)":"none", animation:running?"pulse 1.5s infinite":"none" } }),
+          h("span", { style: { fontSize:11, fontFamily:mono, color:"#94a3b8" } },
+            "Step ", h("span", { style: { color:"#f1f5f9", fontWeight:600 } }, engine.step),
+            " · t = ", h("span", { style: { color:"#00d2d3" } }, (engine.time*1e9).toFixed(2)), " ns",
+            " · U = ", h("span", { style: { color:"#fbbf24" } }, stats.totalEnergy.toExponential(2)), " J",
+            " · ", gridSize, "×", gridSize, " grid"
+          )
+        ),
+        // Fields
+        engine && (activeField === "all"
+          ? h("div", { style: { display:"grid", gridTemplateColumns:"auto auto", gap:12 } },
+              h(FieldCanvas, { engine, fieldType:"ez", label:"E_z [V/m]", canvasSize }),
+              h(FieldCanvas, { engine, fieldType:"hx", label:"H_x [A/m]", canvasSize }),
+              h(FieldCanvas, { engine, fieldType:"hy", label:"H_y [A/m]", canvasSize }),
+              h(FieldCanvas, { engine, fieldType:"hmag", label:"|H| + circulation", canvasSize })
+            )
+          : h(FieldCanvas, { engine, fieldType:activeField, label: activeField==="ez"?"E_z [V/m]":activeField==="hx"?"H_x [A/m]":"H_y [A/m]", canvasSize })
+        ),
+        // Energy plot
+        engine && engine.energyHistory.length > 1 && h("div", { style: { width:"100%", maxWidth:520, padding:12, background:"rgba(0,0,0,0.2)", borderRadius:8, border:"1px solid rgba(255,255,255,0.04)" } },
+          h("div", { style: { fontSize:10, color:"#64748b", fontFamily:mono, textTransform:"uppercase", letterSpacing:"0.1em", marginBottom:6 } }, "EM Energy Conservation"),
+          h(EnergyPlot, { engine, width:496, height:120 })
+        ),
+        // Info cards
+        h("div", { style: { display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(200px, 1fr))", gap:10, width:"100%", maxWidth:520 } },
+          cards.map(({ icon, title, desc }) =>
+            h("div", { key:title, style: { padding:"10px 12px", borderRadius:6, background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.04)" } },
+              h("div", { style: { fontSize:13, marginBottom:4 } }, icon, " ", h("span", { style: { fontSize:11, fontWeight:600, color:"#c8d6e5" } }, title)),
+              h("div", { style: { fontSize:10, color:"#64748b", lineHeight:1.4 } }, desc)
+            )
+          )
+        ),
+        // Theory note
+        h("div", { style: { width:"100%", maxWidth:520, padding:"12px 16px", borderRadius:8, background:"rgba(0,210,211,0.04)", border:"1px solid rgba(0,210,211,0.1)", fontSize:11, color:"#7f8c9b", lineHeight:1.55 } },
+          h("span", { style: { color:"#00d2d3", fontWeight:600 } }, "Yee Algorithm"),
+          " — Fields are staggered in space (E on edges, H on faces) and time (leap-frog). The CFL condition Δt ≤ 1/(c√(1/Δx² + 1/Δy²)) ensures stability. PEC walls enforce E_z = 0, causing 180° phase inversion on reflection. Energy is conserved after the source turns off."
+        ),
+        // Credits
+        h("div", { style: { marginTop: 8, marginBottom: 24, fontSize: 10, color: "#475569", fontFamily: mono, textAlign: "center" } },
+          "Vraj Patel (241110080) · Vardhman Dwivedi (241060033) · IIT Kanpur"
+        )
+      )
+    )
+  );
+}
+
+ReactDOM.render(React.createElement(FDTDApp), document.getElementById("root"));
+</script>
+</body>
+</html>

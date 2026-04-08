@@ -1,0 +1,7 @@
+CourseMaterial/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+PROMPT_FOR_CLAUDE_PPT.md
+.DS_Store
+*.swp
